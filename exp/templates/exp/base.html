@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            Welcome to Expert!
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+</head>
+<body>
+{% block messages %}
+    {% include 'includes/messages.html' %}
+{% endblock messages %}
+{% include 'includes/navbar.html' %}
+
+<div class="container-md">
+    {% block content %}
+        <div class="container">
+            <h5 class="text-center">
+                <p class="display-5">ЭКСПЕРТИЗЫ И ПРАВОВОЕ СОПРОВОЖДЕНИЕ
+                </p>
+            </h5>
+        </div>
+        <div class="container">
+            <div id="carouselExampleFade" class=" carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img height="50%" src="{% static 'img/2.jpg' %}" class="d-block w-100" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/3.jpg' %}" class="d-block w-100" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/4.jpg' %}" class="d-block w-100" alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    {% endblock %}
+</div>
+<div class="container-lg mt-auto">
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 text-center">
+            <p>
+                <strong>телефон</strong>
+            </p>
+            <div class=phone><a href="tel:+79093694701">+7 909) 369-47-01</a></div>
+            <div class=phone><a href="tel:+79317068600">+7 (931) 706-86-00</a></div>
+
+        </div>
+        {# VK Widget #}
+        <div id="vk_community_messages"></div>
+        <script type="text/javascript">
+            VK.Widgets.CommunityMessages("vk_community_messages", 177055903, {
+                expanded: "0",
+                tooltipButtonText: "Есть вопрос?"
+            });
+        </script>
+
+    </div>
+</div>
+
+
+{% block js %}
+    <script>
+        $(document).ready(function () {
+
+            {% if messages %}
+                // Toasts
+                $(".toast").toast({delay: 5000});
+                $(".toast").toast("show");
+            {% endif %}
+
+        });
+    </script>
+{% endblock js %}
+
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+</body>
+</html>

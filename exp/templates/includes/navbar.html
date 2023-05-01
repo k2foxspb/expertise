@@ -1,0 +1,50 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+        <a class="navbar" href="{% url 'exp:index' %}">
+            <img src="{% static 'img/111.png' %}" alt="home" style="width: 50%">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'exp:about' %}">How to find us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'exp:employ' %}">Our employees</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'exp:news' %}">News</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Profile
+                    </a>
+                    <ul class="dropdown-menu">
+
+                    <li><a class="dropdown-item"
+                           href="{% url 'authapp:profile_edit' pk=request.user.pk %}">edit</a></li>
+                    {% if user.is_superuser %}
+                        <li><a class="dropdown-item" href="{% url 'admin:index' %}">admin</a></li>
+                    {% endif %}
+                    <li><a class="dropdown-item" href="{% url 'authapp:logout' %}">Exit</a></li>
+                {% else %}
+                    <li><a class="nav-link" href="{% url 'authapp:login' %}">Login</a></li>
+                {% endif %}
+
+
+                </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>

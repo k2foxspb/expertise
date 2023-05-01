@@ -1,0 +1,43 @@
+{% extends 'exp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container text-left">
+        <div class="row">
+            <div class="col-4">
+                <img width="150" height="150" src="{% static 'img/Volodya.jpg' %}" class="img-thumbnail"
+                     alt="">
+            </div>
+            <div class="col-8 card-text">
+                <p>
+                    &#128269;<b>Кочемировский Владимир Алексеевич</b><br>
+                    &#8226; Эксперт-химик, эколог, стаж профессиональной деятельности – 40 лет, в том числе опыт
+                    экспертной деятельности более 25 лет.<br>
+                    &#8226; Образование: Ленинградский Государственный Университет, химический факультет (1976 – 1982
+                    гг).<br>
+                    &#8226; Кандидат химических наук (1989 г.),<br>
+                    &#8226; Автор более 70 научных работ, индекс Хирша 15.<br>
+                    &#8226; Член Палаты судебных экспертов им. Ю. Г. Корухова с 2011 г.<br>
+                    &#8226; Доцент Санкт-Петербургского политехнического университета им. Петра Великого.<br>
+                </p>
+            </div>
+        </div>
+        {% if user.is_authenticated %}
+            <div class="row">
+                <div class="col-4">
+                    <img width="150" height="150" src="{% static 'img/я.jpg' %}" class="img-thumbnail"
+                         alt="">
+                </div>
+                <div class="col-8 card-text">
+                    <p>
+                        &#10031;<b>Фокин Валерий Валерьевич</b><br>
+                        &#8226; Брат жены эксперта<br>
+
+
+                    </p>
+                </div>
+
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
