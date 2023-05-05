@@ -1,4 +1,3 @@
-
 <div class="position-absolute w-10" style="z-index: 1;">
     <div aria-live="polite" aria-atomic="true" class="m-2">
         <!-- Position it -->
@@ -6,7 +5,7 @@
 
             {% for message in messages %}
                 <!-- Then put toasts within -->
-                <div class="toast flex-fill w-100
+                <div class="toast flex-fill w-10
       {% if message.level == 30 %}
       border-warning
       {% endif %}
@@ -17,8 +16,7 @@
                         <strong
                                 class="mr-auto {% if message.level == 30 %}text-warning{% endif %}">
                             {{ message.tags|capfirst }} message</strong>
-                        <small class="text-muted">|    just now</small>
-
+                        <small class="text-muted">| just now</small>
                     </div>
                     <div class="toast-body">
                         {{ message }}
