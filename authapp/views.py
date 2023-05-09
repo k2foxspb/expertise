@@ -46,6 +46,11 @@ class RegisterView(CreateView):
 class ProfileEditView(UserPassesTestMixin, UpdateView):
     model = get_user_model()
     form_class = forms.CustomUserChangeForm
+    success_url = "/success/"
+
+    def form_valid(self, form):
+        form.send_email()
+        return super().form_valid(form)
 
     def test_func(self):
         return True if self.request.user.pk == self.kwargs.get("pk") else False
