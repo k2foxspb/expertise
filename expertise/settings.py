@@ -149,8 +149,8 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-CELERY_BROKER_URL = "redis://localhost:6379"
-CELERY_RESULT_BACKEND = "redis://localhost:6379"
+CELERY_BROKER_URL = "redis://127.0.0.1:6379"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
