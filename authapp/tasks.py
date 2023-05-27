@@ -6,6 +6,7 @@ from celery import shared_task
 @shared_task()
 def send_feedback_email_task(email):
     """Sends an email when the feedback form has been submitted."""
+    sleep(20)
     send_mail(
         'test',
         'hello',
