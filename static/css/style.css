@@ -11,6 +11,7 @@
 .color:visited {
     background-color: #10834d;
     color: #ccced2;
+
 }
 
 
@@ -18,4 +19,6 @@
 
 .cole {
     color: #e0e3e8;
+    text-shadow: #0a0a0a 3px 1px 4px;
+    word-wrap: break-word;
 }
