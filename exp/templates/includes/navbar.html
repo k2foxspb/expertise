@@ -1,26 +1,26 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg bg-transparent">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'exp:index' %}">
+    <div class="container">
+        <a class="navbar-brand " href="{% url 'exp:index' %}">
             <img src="{% static 'img/logo1.png' %}" alt="Судебно-криминалистическая экспертиза">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        <button class="navbar-toggler color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-1 mb-lg-1">
+        <div class="collapse navbar-collapse col" id="navbarSupportedContent">
+            <ul class=" navbar-nav me-auto mb-1 mb-lg-1">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'exp:about' %}">How to find us</a>
+                    <a class="nav-link col cole" href="{% url 'exp:about' %}">How to find us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'exp:employ' %}">Our employees</a>
+                    <a class="nav-link col cole" href="{% url 'exp:employ' %}">Our employees</a>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'exp:news' %}">News</a>
+                    <a class="nav-link col cole" href="{% url 'exp:news' %}">News</a>
                 </li>
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle col cole" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Profile
                     </a>

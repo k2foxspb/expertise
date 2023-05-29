@@ -4,3 +4,18 @@
     background-attachment: fixed;
     background-size: cover;
 }
+
+.color,
+.color:hover,
+.color:focus,
+.color:visited {
+    background-color: #10834d;
+    color: #ccced2;
+}
+
+
+
+
+.cole {
+    color: #e0e3e8;
+}
