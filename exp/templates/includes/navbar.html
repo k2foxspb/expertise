@@ -11,29 +11,29 @@
         <div class="collapse navbar-collapse col" id="navbarSupportedContent">
             <ul class=" navbar-nav me-auto mb-1 mb-lg-1">
                 <li class="nav-item">
-                    <a class="nav-link col cole" href="{% url 'exp:about' %}">How to find us</a>
+                    <a class="nav-link col cole" href="{% url 'exp:about' %}">Контакты</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link col cole" href="{% url 'exp:employ' %}">Our employees</a>
+                    <a class="nav-link col cole" href="{% url 'exp:employ' %}">Наши сотрудники</a>
                 <li class="nav-item">
-                    <a class="nav-link col cole" href="{% url 'exp:news' %}">News</a>
+                    <a class="nav-link col cole" href="{% url 'exp:news' %}">Новости</a>
                 </li>
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle col cole" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
-                        Profile
+                        Профиль
                     </a>
-                    <ul class="dropdown-menu">
+                        <ul class="dropdown-menu bg-transparent col cole">
 
-                    <li><a class="dropdown-item"
-                           href="{% url 'authapp:profile_edit' pk=request.user.pk %}">edit</a></li>
+                    <li><a class="dropdown-item bg-transparent col cole"
+                           href="{% url 'authapp:profile_edit' pk=request.user.pk %}">Редактировать</a></li>
                     {% if user.is_superuser %}
-                        <li><a class="dropdown-item" href="{% url 'admin:index' %}">admin</a></li>
+                        <li><a class="dropdown-item bg-transparent col cole" href="{% url 'admin:index' %}">Панель администратора</a></li>
                     {% endif %}
-                    <li><a class="dropdown-item" href="{% url 'authapp:logout' %}">Exit</a></li>
+                    <li><a class="dropdown-item bg-transparent col cole" href="{% url 'authapp:logout' %}">Выход</a></li>
                 {% else %}
-                    <li><a class="nav-link col cole" href="{% url 'authapp:login' %}">Login</a></li>
+                    <li><a class="nav-link col cole" href="{% url 'authapp:login' %}">Вход</a></li>
                 {% endif %}
 
 
