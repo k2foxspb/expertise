@@ -37,7 +37,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(_("last name"), max_length=150, blank=True)
     age = models.PositiveIntegerField(blank=True, null=True)
     avatar = models.ImageField(upload_to=users_avatars_path, blank=True, null=True)
-    is_verified = models.BooleanField('verified', default=False)
     email = models.CharField(
         _("email address"),
         max_length=256,
