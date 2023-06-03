@@ -19,7 +19,7 @@ class OurEmployeesView(TemplateView):
 
 class NewsListView(ListView):
     model = exp_models.News
-    paginate_by = 5
+    paginate_by = 3
 
     def get_queryset(self):
         return super().get_queryset().filter(deleted=False)

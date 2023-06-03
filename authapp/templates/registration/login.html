@@ -1,8 +1,11 @@
 {% extends 'exp/base.html' %}
 {% load static %}
 {% block title %}
-    Вход
+Вход
 {% endblock title %}
+
+{% block navbar %}
+{% endblock navbar %}
 
 {% block content %}
 {% include 'includes/messages.html' %}
@@ -33,12 +36,12 @@
             </p>
         </form>
         <p>
-{#        <div class="row justify-content-between">#}
-{#            <div class="col">#}
-{#                <a href="{% url 'authapp:register' %}"><small>Регистрация</small></a>#}
-{#            </div>#}
-{##}
-{#        </div>#}
+        <div class="row justify-content-between">
+            <div class="col">
+                <a href="{% url 'authapp:register' %}"><small>Регистрация</small></a>
+            </div>
+
+        </div>
     </div>
 </div>
 
@@ -52,6 +55,7 @@
         {% endif %}
 
     });
+
 </script>
 
 {% endblock content %}

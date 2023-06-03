@@ -1,9 +1,9 @@
 {% extends 'exp/base.html' %}
 
 {% block content %}
-    <div class="row justify-content-center my-2">
-        <div class="col-lg-6">
-            <h3>Регистрация нового пользователя</h3>
+    <div class="row justify-content-center my-2 ">
+        <div class="col-lg-6 ">
+            <h3 class="">Регистрация нового пользователя</h3>
             <form method="post" class="mt-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div id="div_id_username" class="form-group"><label for="id_username"
