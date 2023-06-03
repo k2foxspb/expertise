@@ -6,10 +6,10 @@ from django.contrib.auth.models import PermissionsMixin, UserManager
 from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.core.mail import send_mail
 from django.db import models
-from django.db.models import signals
+# from django.db.models import signals
 from django.utils.translation import gettext_lazy as _
 
-from authapp.tasks import send_verification_email
+# from authapp.tasks import send_verification_email
 
 
 def users_avatars_path(instance, filename):
@@ -90,9 +90,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         """Send email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
-    def user_post_save(sender, instance, signal, *args, **kwargs):
-        if not instance.is_verified:
-            # Send verification email
-            send_verification_email.delay(instance.pk)
-
-    signals.post_save.connect(user_post_save, sender=username)
+    # def user_post_save(sender, instance, signal, *args, **kwargs):
+    #     if not instance.is_verified:
+    #         # Send verification email
+    #         send_verification_email.delay(instance.pk)
+    #
+    # signals.post_save.connect(user_post_save, sender=username)
