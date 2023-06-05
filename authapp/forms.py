@@ -1,11 +1,8 @@
 import os
-from time import sleep
 
-from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, UsernameField
 from django.core.exceptions import ValidationError
-from django.core.mail import send_mail
 from django.utils.translation import gettext_lazy as _
 from django import forms
 from authapp.tasks import send_feedback_email_task

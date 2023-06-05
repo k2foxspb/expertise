@@ -6,7 +6,6 @@ from django.urls import reverse_lazy
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, UpdateView
-
 from authapp import forms
 
 
