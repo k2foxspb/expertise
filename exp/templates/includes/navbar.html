@@ -28,7 +28,7 @@
 
                     <li><a class="dropdown-item bg-transparent col cole"
                            href="{% url 'authapp:profile_edit' pk=request.user.pk %}">Редактировать</a></li>
-                    {% if user.is_superuser %}
+                    {% if user.is_staff %}
                         <li><a class="dropdown-item bg-transparent col cole" href="{% url 'admin:index' %}">Панель администратора</a></li>
                     {% endif %}
                     <li><a class="dropdown-item bg-transparent col cole" href="{% url 'authapp:logout' %}">Выход</a></li>
