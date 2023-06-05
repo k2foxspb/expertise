@@ -17,7 +17,7 @@ class CustomUserCreationForm(UserCreationForm):
         "first_name",
         "last_name",
         "age",
-        "avatar",
+        # "avatar",
     ]
 
     class Meta:
@@ -28,7 +28,7 @@ class CustomUserCreationForm(UserCreationForm):
             "first_name",
             "last_name",
             "age",
-            "avatar",
+            # "avatar",
         )
         field_classes = {"username": UsernameField}
 
@@ -42,7 +42,7 @@ class CustomUserChangeForm(forms.ModelForm):
             "first_name",
             "last_name",
             "age",
-            "avatar",
+            # "avatar",
 
         )
         field_classes = {"username": UsernameField}
