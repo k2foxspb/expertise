@@ -8,8 +8,8 @@ def send_feedback_email_task(email):
 
     send_mail(
         'привет',
-        'hello',
-        email,
+        f'изменился емаил  {email}',
+        'k2foxspb@mail.ru',
         ['k2foxspb@mail.ru'],
         fail_silently=False,
 
