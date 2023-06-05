@@ -52,7 +52,6 @@ class CustomUserChangeForm(forms.ModelForm):
             self.cleaned_data["email"],
         )
 
-
     def clean_avatar(self):
         arg_as_str = "avatar"
         if arg_as_str in self.changed_data and self.instance.avatar:
