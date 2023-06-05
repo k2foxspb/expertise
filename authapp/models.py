@@ -6,10 +6,7 @@ from django.contrib.auth.models import PermissionsMixin, UserManager
 from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.core.mail import send_mail
 from django.db import models
-# from django.db.models import signals
 from django.utils.translation import gettext_lazy as _
-
-# from authapp.tasks import send_verification_email
 
 
 def users_avatars_path(instance, filename):
@@ -27,7 +24,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         _("username"),
         max_length=150,
         unique=True,
-        help_text=_("Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."),
+        # help_text=_("Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."),
         validators=[username_validator],
         error_messages={
             "unique": _("A user with that username already exists."),
@@ -36,7 +33,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_("first name"), max_length=150, blank=True)
     last_name = models.CharField(_("last name"), max_length=150, blank=True)
     age = models.PositiveIntegerField(blank=True, null=True)
-    avatar = models.ImageField(upload_to=users_avatars_path, blank=True, null=True)
+    # avatar = models.ImageField(upload_to=users_avatars_path, blank=True, null=True)
     email = models.CharField(
         _("email address"),
         max_length=256,
@@ -88,10 +85,3 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send email to this user."""
         send_mail(subject, message, from_email, [self.email], **kwargs)
-
-    # def user_post_save(sender, instance, signal, *args, **kwargs):
-    #     if not instance.is_verified:
-    #         # Send verification email
-    #         send_verification_email.delay(instance.pk)
-    #
-    # signals.post_save.connect(user_post_save, sender=username)
