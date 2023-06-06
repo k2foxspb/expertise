@@ -1,5 +1,7 @@
 {% load static %}
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head class="background_main" style="background-image: url({% static 'img/весы.jpg' %});backdrop-filter: blur(5px)">
     <meta charset="UTF-8">
@@ -38,12 +40,14 @@
 
 
 
+
+
     </script>
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/93806158" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
-    <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+    <script src="vk.com/js/api/openapi.js?169" type="text/javascript"></script>
 
 </head>
 <body class="background_main"
@@ -60,14 +64,8 @@
 {% include 'includes/navbar.html' %}
 {% endblock navbar %}
 
-<script type="text/javascript">
-  VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {tooltipButtonText: "Есть вопрос?", expandTimeout: 10000});
-
-
-</script>
 <div class="container-md">
     {% block content %}
-    <div id="vk_community_messages"></div>
     <div class="container">
         <h5 class="cole">
             <p class="display-5 text-center">Судебные и криминалистические экспертизы
@@ -108,6 +106,11 @@
     </div>
     {% endblock content %}
 
+    <div id="vk_community_messages"></div>
+    <script type="text/javascript">
+        VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {tooltipButtonText: "Есть вопрос?", expandTimeout: 10000});
+
+    </script>
 </div>
 <!--{#-->
 <!--<div class="container-lg mt-auto">#}-->
@@ -150,6 +153,8 @@
             {% endif %}
 
         });
+
+
 
 
 
