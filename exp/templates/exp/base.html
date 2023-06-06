@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?169"></script>
     <title>
         {% block title %}
             Судебная экспертиза
@@ -15,7 +16,6 @@
     <meta name="yandex-verification" content="582690300f804461"/>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
@@ -42,8 +42,6 @@
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/93806158" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
-    <!-- /Yandex.Metrika counter -->
-    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?169"></script>
 </head>
 <body class="background_main"
       style="background-image: url({% static 'img/весы.jpg' %});backdrop-filter: blur(5px); background-position: center center;
@@ -103,23 +101,24 @@
     <!-- VK Widget -->
 
 </div>
-<script>
-    $(document).ready(function () {
-
-        {% if messages %}
-            // Toasts
-            $(".toast").toast({delay: 5000});
-            $(".toast").toast("show");
-        {% endif %}
-
-    });
-
-
-</script>
+{#<script>#}
+{#    $(document).ready(function () {#}
+{##}
+{#        {% if messages %}#}
+{#            // Toasts#}
+{#            $(".toast").toast({delay: 5000});#}
+{#            $(".toast").toast("show");#}
+{#        {% endif %}#}
+{##}
+{#    });#}
+{##}
+{##}
+{#</script>#}
+<!-- VK Widget -->
 <div id="vk_community_messages"></div>
 <script type="text/javascript">
     VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {
-        expanded: "0",
+        expanded: "1",
         tooltipButtonText: "Есть вопрос?"
     });
 </script>
