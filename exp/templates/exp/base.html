@@ -37,6 +37,8 @@
         });
 
 
+
+
     </script>
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/93806158" style="position:absolute; left:-9999px;" alt=""/></div>
@@ -49,10 +51,7 @@
               background-attachment: fixed;
               background-size: cover;">
 <!-- Put this div tag to the place, where the Community messages block will be -->
-<div id="vk_community_messages"></div>
-<script type="text/javascript">
-  VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {tooltipButtonText: "Есть вопрос?", expandTimeout: 10000});
-</script>
+
 {% block messages %}
 {% include 'includes/messages.html' %}
 {% endblock messages %}
@@ -60,8 +59,14 @@
 {% include 'includes/navbar.html' %}
 {% endblock navbar %}
 
+<div id="vk_community_messages"></div>
+<script type="text/javascript">
+  VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {tooltipButtonText: "Есть вопрос?", expandTimeout: 10000});
+
+</script>
 <div class="container-md">
     {% block content %}
+
     <div class="container">
         <h5 class="cole">
             <p class="display-5 text-center">Судебные и криминалистические экспертизы
@@ -144,6 +149,8 @@
             {% endif %}
 
         });
+
+
 
 
 </script>
