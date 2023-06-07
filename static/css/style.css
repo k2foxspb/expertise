@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-color: #1b1b1b;
 }
 
 .color,
@@ -21,15 +22,12 @@
     word-wrap: break-word;
 }
 
-
-
-
-.header{
+.header {
     bottom: 50%;
     left: 80%;
 }
 
-.width{
+.width {
     width: 50px;
 }
-/*position-sticky */
+
