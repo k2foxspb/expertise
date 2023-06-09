@@ -32,6 +32,11 @@ class CustomUserCreationForm(UserCreationForm):
         )
         field_classes = {"username": UsernameField}
 
+    def send_email(self):
+        send_feedback_email_task.delay(
+            self.cleaned_data["email"],
+        )
+
 
 class CustomUserChangeForm(forms.ModelForm):
     class Meta:

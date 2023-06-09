@@ -41,6 +41,10 @@ class RegisterView(CreateView):
     form_class = forms.CustomUserCreationForm
     success_url = reverse_lazy("exp:index")
 
+    def form_valid(self, form):
+        form.send_email()
+        return super().form_valid(form)
+
 
 class ProfileEditView(UserPassesTestMixin, UpdateView):
     model = get_user_model()

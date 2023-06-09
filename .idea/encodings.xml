@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/exp/templates/exp/news_list.html" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/media/avatar_default.svg" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/static/css" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/static/css/я.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js" charset="windows-1251" />
   </component>
 </project>

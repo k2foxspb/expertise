@@ -12,5 +12,4 @@ def send_feedback_email_task(email):
         'k2foxspb@mail.ru',
         ['k2foxspb@mail.ru'],
         fail_silently=False,
-
     )
