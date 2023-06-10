@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.urls import reverse
 
 
@@ -9,7 +10,7 @@ class News(models.Model):
     created = models.DateTimeField(auto_now_add=True, verbose_name="Created", editable=False)
     updated = models.DateTimeField(auto_now=True, verbose_name="Edited", editable=False)
     deleted = models.BooleanField(default=False)
-    slug = models.SlugField(null=True)
+    slug = models.SlugField(null=True, unique=True, help_text="имя, которое будет ")
 
     def get_absolute_url(self):
         return reverse("article_detail", kwargs={"slug": self.slug})
