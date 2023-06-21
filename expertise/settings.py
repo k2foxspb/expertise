@@ -159,3 +159,4 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = name_mail
 EMAIL_HOST_PASSWORD = pass_mail
+
