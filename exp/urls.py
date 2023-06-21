@@ -12,17 +12,17 @@ urlpatterns = [
     path('news', views.NewsListView.as_view(), name='news'),
     path("news/create/", views.NewsCreateView.as_view(), name="news_create"),
     path(
-        "news/<int:pk>/detail",
+        "news/<slug:slug>/detail",
         views.NewsDetailView.as_view(),
         name="news_detail",
     ),
     path(
-        "news/<int:pk>/update",
+        "news/<slug:slug>/update",
         views.NewsUpdateView.as_view(),
         name="news_update",
     ),
     path(
-        "news/<int:pk>/delete",
+        "news/<slug:slug>/delete",
         views.NewsDeleteView.as_view(),
         name="news_delete",
     ),
