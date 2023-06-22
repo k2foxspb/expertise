@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'authapp',
     "crispy_bootstrap5",
+    'exp.services'
 ]
 
 MIDDLEWARE = [
