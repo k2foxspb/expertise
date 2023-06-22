@@ -14,7 +14,7 @@
             <p>
             <div class="row">
                 <div class="col-6">
-                    <form action="{% url 'exp:news_delete' pk=object.pk %}"
+                    <form action="{% url 'exp:news_delete' slug=object.slug %}"
                           method="post">
                         {% csrf_token %}
                         <button class="btn btn-danger btn-block"
