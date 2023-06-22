@@ -34,7 +34,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     def send_email(self):
         send_feedback_email_task.delay(
-            self.cleaned_data["email"],
+            self.cleaned_data["email", "username"],
         )
 
 
@@ -51,11 +51,6 @@ class CustomUserChangeForm(forms.ModelForm):
 
         )
         field_classes = {"username": UsernameField}
-
-    def send_email(self):
-        send_feedback_email_task.delay(
-            self.cleaned_data["email"],
-        )
 
     def clean_avatar(self):
         arg_as_str = "avatar"
