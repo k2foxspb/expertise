@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head class="background_main" style="background-image: url({% static 'img/fone.png' %})">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
@@ -43,74 +43,31 @@
         <div><img src="https://mc.yandex.ru/watch/93806158" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
 </head>
-<body class="background_main"
-      style="background-image: url({% static 'img/fone.png' %}); background-position: center center;
-              background-repeat: no-repeat;
-              background-attachment: fixed;
-              background-size: cover;">
-
-
+<body>
 {% block messages %}
     {% include 'includes/messages.html' %}
 {% endblock messages %}
 {% block navbar %}
     {% include 'includes/navbar.html' %}
 {% endblock navbar %}
+{% block navTabs %}
+    {% include 'includes/nav&tabs.html' %}
+{% endblock navTabs %}
+{% block content %}
+{% endblock content %}
 
-<div class="container-md">
-    {% block content %}
-        <div class="container">
-            <h5 class="cole">
-                <p class="display-5 text-center">Судебные и криминалистические экспертизы
-                </p>
-                <p class="display-8">
-                    <img src="{% static  'img/home.jpg' %}" align="right" width="50%" alt="">
-                    Экспертная деятельность в современном мире – это отрасль знаний, объединяющая научно-техническую,
-                    социальную и правовую сферы. Наука не стоит на месте, и эта отрасль постоянно совершенствуется.
-                    Появляются новые методы и методики экспертного исследования, а развивающиеся IT-технологии активно
-                    способствуют этому. Это требует от экспертов постоянного повышения квалификации и отслеживания
-                    мировых трендов в мировой науке.
-                    Заключение эксперта, очень часто, является решающим доказательством при вынесении судебного решения,
-                    поэтому подход к выбору экспертной организации должен основываться на нескольких важных требованиях:<br>
-                <p>
-                    - методики исследования должны быть аттестованы в установленном законом порядке, приборы и средства
-                    измерения внесены в Государственный реестр и поверены (Федеральный закон "Об обеспечении единства
-                    измерений" от 26.06.2008 № 102-ФЗ), в противном случае, заключение эксперта может быть признано
-                    недопустимым доказательством<br>
-                </p>
-                <p>
-                    - эксперт должен быть компетентен. Как прописано в законах эксперт – это лицо, обладающее
-                    специальными знаниями, т.е. он должен иметь высшее образование и получить дополнительное
-                    профессиональное образование по конкретной экспертной специальности. Не менее важным является
-                    профессиональный опыт.
-                    <a class="cole2" href="{% url 'exp:employ' %}">НАШИ ЭКСПЕРТЫ</a> имеют огромный опыт и высшую квалификацию! <br>
-                </p>
-                <p>
-                    - экспертная организация должна иметь современную техническую базу для обеспечения технической
-                    возможности проведения судебно-технической экспертизы.
-                </p>
-                <p>
-                    Мы готовы предоставить Вам высокопрофессиональные экспертные заключения, отвечающие всем
-                    перечисленным требованиям
-                </p>
+    <div id="vk_community_messages" class="position-sticky header"></div>
+    <script type="text/javascript">
+        VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {
+            expanded: "0",
+            tooltipButtonText: "Есть вопрос?"
+        });
+    </script>
 
 
-                </p>
-            </h5>
-        </div>
-        <div id="vk_community_messages" class="position-sticky header cole2"></div>
-        <script type="text/javascript">
-            VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {
-                expanded: "0",
-                tooltipButtonText: "Есть вопрос?"
-            });
-        </script>
 
-    {% endblock content %}
+<!-- VK Widget -->
 
-     <!-- VK Widget -->
-
-</div>
 <script>
     $(document).ready(function () {#}
 
@@ -125,19 +82,24 @@
 
 </script>
 <div class="container-lg mt-auto">
-<div class="row justify-content-center">
-    <div class="col-sm-9 col-md-3 text-center">
-        <p>
-            <strong class="cole">Мы в соц сетях!</strong>
-        </p>
-        <a aria-label="Chat on WhatsApp"  href="https://wa.me/+79992346479"><img alt="Chat on WhatsApp" class="width"
-                                                                               src="{% static 'img/WhatsApp_white.png' %}"/>
-        <a href="https://vk.com/club216989087"><img alt="VK" class="width" src="{% static 'img/VK_white.png' %}">
-        <a href="mailto:sudexpert2023@mail.ru"><img alt="email" class="width" src="{% static 'img/Mail.ru_white.png'%}">
-        <a href="https://instagram.com/forensic_forever?igshid=MzRlODBiNWFlZA"><img alt="instagram" class="width" src="{% static 'img/Instagram_white.png'%}">
-        <a href="https://t.me/sudexpert2023"><img alt="telegram" class="width" src="{% static 'img/Telegram_white.png'%}">
+    <div class="row justify-content-center">
+        <div class="col-sm-9 col-md-3 text-center">
+            <p>
+                <strong class="cole">Мы в соц сетях!</strong>
+            </p>
+            <a aria-label="Chat on WhatsApp" href="https://wa.me/+79992346479"><img alt="Chat on WhatsApp" class="width"
+                                                                                    src="{% static 'img/WhatsApp_white.png' %}"/>
+                <a href="https://vk.com/club216989087"><img alt="VK" class="width"
+                                                            src="{% static 'img/VK_white.png' %}">
+                    <a href="mailto:sudexpert2023@mail.ru"><img alt="email" class="width"
+                                                                src="{% static 'img/Mail.ru_white.png' %}">
+                        <a href="https://instagram.com/forensic_forever?igshid=MzRlODBiNWFlZA"><img alt="instagram"
+                                                                                                    class="width"
+                                                                                                    src="{% static 'img/Instagram_white.png' %}">
+                            <a href="https://t.me/sudexpert2023"><img alt="telegram" class="width"
+                                                                      src="{% static 'img/Telegram_white.png' %}">
+        </div>
     </div>
-</div>
 </div>
 
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
