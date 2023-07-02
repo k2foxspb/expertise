@@ -1,7 +1,7 @@
 .background_main {
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     background-size: cover;
     background-color: #1b1b1b;
 }
@@ -10,14 +10,18 @@
 .color:hover,
 .color:focus,
 .color:visited {
-    background-color: #faf9f9;
-    color: #ccced2;
+    background-color: #11574A;
+    color: #11574A;
 
+}
+.color2 {
+    color: #11574A;
+    font-weight: 700
 }
 
 .cole {
-    color: #e0e3e8;
-    text-shadow: #0a0a0a 3px 1px 4px;
+    color: #11574A;
+    /*text-shadow: #0a0a0a 3px 1px 4px;*/
     word-wrap: break-word;
 }
 
@@ -29,6 +33,30 @@
 .width {
     width: 50px;
 }
+
 .cole2 {
     color: #6a6ac2;
+}
+.cole3 {
+    color: #ffffff;
+}
+
+.background_logo {
+    /*background-image: url({% static 'img/fone.png' %});*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+">
+}
+.navbar {
+    height: 300px;
+}
+
+.col-2 {
+    width: 10%;
+    margin-top: 1px;
+}
+.colomn {
+    height: 70px;
 }

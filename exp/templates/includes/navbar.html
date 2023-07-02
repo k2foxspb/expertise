@@ -1,47 +1,19 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg bg-transparent">
-    <div class="container">
-        <a class="navbar-brand " href="{% url 'exp:index' %}">
-            <img src="{% static 'img/logo1.png' %}" width="60%" alt="Судебно-криминалистическая экспертиза">
-        </a>
-        <button class="navbar-toggler color" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse col" id="navbarSupportedContent">
-            <ul class=" navbar-nav me-auto mb-1 mb-lg-1">
-                <li class="nav-item">
-                    <a class="nav-link col cole" href="{% url 'exp:about' %}">Контакты</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link col cole" href="{% url 'exp:employ' %}">Наши сотрудники</a>
-                <li class="nav-item">
-                    <a class="nav-link col cole" href="{% url 'exp:news' %}">Новости</a>
-                </li>
-                {% if user.is_authenticated %}
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle col cole" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Профиль
-                    </a>
-                        <ul class="dropdown-menu bg-transparent col cole">
 
-                    <li><a class="dropdown-item bg-transparent col cole"
-                           href="{% url 'authapp:profile_edit' pk=request.user.pk %}">Редактировать</a></li>
-                    {% if user.is_staff %}
-                        <li><a class="dropdown-item bg-transparent col cole" href="{% url 'admin:index' %}">Панель администратора</a></li>
-                    {% endif %}
-                    <li><a class="dropdown-item bg-transparent col cole" href="{% url 'authapp:logout' %}">Выход</a></li>
-                {% else %}
-                    <li><a class="nav-link col cole" href="{% url 'authapp:login' %}">Вход</a></li>
-                {% endif %}
-
-
-                </ul>
-                </li>
-
-            </ul>
-
+<div class="container-fluid background_main navbar"
+     style="background-image: url({% static 'img/микро.png' %})">
+    <div class="row">
+        <div class="col-2 ">
+            <a class="col-10 " href="{% url 'exp:index' %}">
+                <img src="{% static 'img/logo1.png' %}"style="width: 140%" alt="Судебно-криминалистическая экспертиза">
+            </a>
         </div>
+        <div class="col-10">
+            <p class="display-6 col-5 tex color2">Судебные и криминалистические экспертизы
+            </p>
+        </div>
+        <div class="w-100 colomn"></div>
+        <div class="col colomn"></div>
+        <div class="col colomn"></div>
     </div>
-</nav>
+</div>

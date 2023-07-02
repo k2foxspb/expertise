@@ -10,6 +10,7 @@ urlpatterns = [
     path('about', views.AboutUsView.as_view(), name='about'),
     path('employees', views.OurEmployeesView.as_view(), name='employ'),
     path('news', views.NewsListView.as_view(), name='news'),
+    path('work', views.AboutView.as_view(), name='aboutWork'),
     path("news/create/", views.NewsCreateView.as_view(), name="news_create"),
     path(
         "news/<slug:slug>/detail",

@@ -17,6 +17,10 @@ class OurEmployeesView(TemplateView):
     template_name = "exp/ourEmployees.html"
 
 
+class AboutView(TemplateView):
+    template_name = "exp/ourWork.html"
+
+
 class NewsListView(ListView):
     model = exp_models.News
     paginate_by = 3
