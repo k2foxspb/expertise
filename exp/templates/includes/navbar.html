@@ -1,19 +1,21 @@
 {% load static %}
 
-<div class="container-fluid background_main navbar"
+<div class="container-fluid navbar background_main img-fluid"
      style="background-image: url({% static 'img/микро.png' %})">
-    <div class="row">
-        <div class="col-2 ">
-            <a class="col-10 " href="{% url 'exp:index' %}">
-                <img src="{% static 'img/logo1.png' %}"style="width: 100%" alt="Судебно-криминалистическая экспертиза">
-            </a>
-        </div>
-        <div class="col-10">
-            <p class="display-6 col-5 tex color2">Судебные и криминалистические экспертизы
-            </p>
-        </div>
-        <div class="w-100 colomn"></div>
-        <div class="col colomn"></div>
-        <div class="col colomn"></div>
+<div class="row">
+    <div class="col-2 ">
+        <a class="col-10 " href="{% url 'exp:index' %}">
+            <img src="{% static 'img/logo1.png' %}" style="width: 100%;" alt="Судебно-криминалистическая экспертиза">
+        </a>
     </div>
+
+    <div class="col-10">
+        <p class="display-6 col-10 tex color2">Судебные и криминалистические экспертизы
+        </p>
+    </div>
+
+    <div class="w-100 colomn"></div>
+    <div class="col colomn"></div>
+    <div class="col colomn"></div>
+</div>
 </div>

@@ -1,6 +1,6 @@
 .background_main {
     background-position: center;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     /*background-attachment: fixed;*/
     background-size: cover;
     background-color: #1b1b1b;
@@ -59,4 +59,9 @@
 }
 .colomn {
     height: 70px;
+}
+
+.img-fluid {
+  max-width: 100%;
+    height: 300px;
 }
