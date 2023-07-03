@@ -43,7 +43,7 @@
         <div><img src="https://mc.yandex.ru/watch/93806158" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
 </head>
-<body>
+<body class="bg-dark">
 {% block messages %}
     {% include 'includes/messages.html' %}
 {% endblock messages %}
@@ -54,16 +54,16 @@
     {% include 'includes/nav&tabs.html' %}
 {% endblock navTabs %}
 {% block content %}
+
 {% endblock content %}
 
-    <div id="vk_community_messages" class="position-sticky header"></div>
-    <script type="text/javascript">
-        VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {
-            expanded: "0",
-            tooltipButtonText: "Есть вопрос?"
-        });
-    </script>
-
+<div id="vk_community_messages" class="position-sticky header"></div>
+<script type="text/javascript">
+    VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {
+        expanded: "0",
+        tooltipButtonText: "Есть вопрос?"
+    });
+</script>
 
 
 <!-- VK Widget -->
@@ -81,11 +81,11 @@
         ;
 
 </script>
-<div class="container-lg mt-auto">
+<div class="container-xxl mt-auto">
     <div class="row justify-content-center">
-        <div class="col-sm-9 col-md-3 text-center">
+        <div class="col-sm-9 col-md-5 text-center">
             <p>
-                <strong class="cole">Мы в соц сетях!</strong>
+                <strong class="cole3">Мы в соц сетях!</strong>
             </p>
             <a aria-label="Chat on WhatsApp" href="https://wa.me/+79992346479"><img alt="Chat on WhatsApp" class="width"
                                                                                     src="{% static 'img/WhatsApp_white.png' %}"/>

@@ -5,7 +5,7 @@
 {% endblock title %}
 
 {% block content %}
-
+<div class="container-md">
     {% if page_num %}
         <div class="card my-2">
             <div class="card-body">
@@ -14,11 +14,11 @@
         </div>
     {% endif %}
 
-    <div class="row">
-        <div class="col-lg-8">
+    <div class="row ">
+        <div class="col-lg-8 ">
 
             {% for item in object_list %}
-                <div class="card my-2 cole bg-transparent">
+                <div class="card my-3  bg-transparent cole3 ">
                     <div class="card-body">
                         <h5 class="card-title">{{ item.title }}</h5>
 
@@ -35,14 +35,14 @@
                             {% if perms.exp.change_news %}
                                 <div class="col text-center">
                                     <a href="{% url 'exp:news_update'  slug=item.slug %}">
-                                        <i class="far fa-edit cole">редактировать</i>
+                                        <i class="far fa-edit ">редактировать</i>
                                     </a>
                                 </div>
                             {% endif %}
                             {% if perms.exp.delete_news %}
                                 <div class="col text-center">
                                     <a href="{% url 'exp:news_delete'  slug=item.slug %}">
-                                        <i class="bi bi-trash-fill cole">удалить</i>
+                                        <i class="bi bi-trash-fill ">удалить</i>
                                     </a>
                                 </div>
                             {% endif %}
@@ -111,5 +111,6 @@
             </ul>
         </nav>
     </div>
+</div>
 
 {% endblock content %}
