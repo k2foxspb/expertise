@@ -1,20 +1,31 @@
 {% load static %}
 <div class="container-md  background_main"
-     style="background-image: url({% static 'img/микро.png' %})">
-<div class="row">
-    <div class="col-3 ">
-        <a class="col-10 " href="{% url 'exp:index' %}">
-            <img src="{% static 'img/logo11.png' %}" style="width: 100%;" alt="Судебно-криминалистическая экспертиза">
-        </a>
-    </div>
+     style="background-image: url({% static 'img/микро 2.png' %})">
+    <div class="row">
+        <div class="col-3 ">
+            <a class="col-3 logo" href="{% url 'exp:index' %}">
+                <img src="{% static 'img/logo11.png' %}" style="width: 110%;"
+                     alt="Судебно-криминалистическая экспертиза">
+            </a>
+        </div>
+        <div class="col-3 "></div>
+        <div class="col-3 "></div>
+        <div class="col-3 "></div>
+        <div class="col-4 width" style="text-align: right">
 
-    <div class="col-7">
-        <p class="display-6 col-7 tex color2">Судебные и криминалистические экспертизы
-        </p>
-    </div>
+            <a aria-label="Chat on WhatsApp" href="https://wa.me/+79118474970"><img alt="Chat on WhatsApp" class="width"
+                                                                                    src="{% static 'img/WhatsApp_white.png' %}"></a>
+            <a href="mailto:sudexpert2023@mail.ru"><img alt="email" class="width"
+                                                        src="{% static 'img/Mail.ru_white.png' %}"></a>
+            <a class=phone href="tel:+79317068600"><img src="{% static 'img/Viber_white.png' %}" class="width" alt="11"></a>
 
-    <div class="w-100 colomn"></div>
+
+        </div>
+        <div class="w-100"></div>
+        <div class="col-10">
+            <p class="fs-4 text col-8 color2">Судебные и криминалистические экспертизы
+            </p>
+        </div>
+    </div>
     <div class="col colomn"></div>
-    <div class="col colomn"></div>
-</div>
 </div>
