@@ -58,7 +58,9 @@
     margin-right: 3px;
 }
 .col-4 {
-    width: 80%
+    width: 80%;
+    margin-top: 3px;
+    margin-right: 3px;
 }
 
 .colomn {
