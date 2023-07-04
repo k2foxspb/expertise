@@ -1,27 +1,30 @@
 {% load static %}
 <div class="container-md  background_main"
      style="background-image: url({% static 'img/микро2.png' %})">
-    <div class="row">
-        <div class="col-3 ">
-            <a class="col-3 logo" href="{% url 'exp:index' %}">
-                <img src="{% static 'img/logo11.png' %}" style="width: 110%;"
+    <div class="row" >
+        <div class="col-5" style="text-align:center">
+            <a class="col-5" href="{% url 'exp:index' %}">
+                <img src="{% static 'img/logo11.png' %}" style="width: 100%;max-width:100px"
                      alt="Судебно-криминалистическая экспертиза">
             </a>
         </div>
-        <div class="col-4 width" style="text-align: right">
-
-            <a aria-label="Chat on WhatsApp" href="https://wa.me/+79118474970"><img alt="Chat on WhatsApp" class="width"
-                                                                                    src="{% static 'img/WhatsApp_white.png' %}"></a>
-            <a href="mailto:sudexpert2023@mail.ru"><img alt="email" class="width"
-                                                        src="{% static 'img/Mail.ru_white.png' %}"></a>
-            <a class=phone href="tel:+79317068600"><img src="{% static 'img/Viber_white.png' %}" class="width" alt="11"></a>
-
-
+        <div class="w-100"></div>
+        <div class="col-5">
+            <p class="fs-4 text color2 " style="text-align:center">Судебные и криминалистические экспертизы
+            </p>
         </div>
         <div class="w-100"></div>
-        <div class="col-10">
-            <p class="fs-4 text col-8 color2">Судебные и криминалистические экспертизы
-            </p>
+        <div class="col-5">
+
+            <a aria-label="Chat on WhatsApp" href="https://wa.me/+79118474970"><img alt="Chat on WhatsApp"
+                                                                                                  class="width" style="max-width:50px"
+                                                                                                  src="{% static 'img/WhatsApp_white.png' %}"></a>
+            <a href="mailto:sudexpert2023@mail.ru"><img alt="email" class="width" style="max-width:50px"
+                                                                      src="{% static 'img/Mail.ru_white.png' %}"></a>
+            <li class="phone color2"><a href="tel:+79093694701">+7 (909) 369-47-01</a></li>
+            <li class="phone color2"><a href="tel:+79317068600">+7 (931) 706-86-00</a></li>
+
+
         </div>
     </div>
     <div class="col colomn"></div>
