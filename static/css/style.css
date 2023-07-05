@@ -88,3 +88,12 @@
 .cc {
     font-size: 2.5vw
 }
+
+.social {
+    max-width: 50px;
+    min-width: 20px;
+}
+
+.centerr {
+    text-align:center;
+}
