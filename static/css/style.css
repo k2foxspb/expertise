@@ -90,10 +90,17 @@
 }
 
 .social {
-    width: 100%;
+    width: 10vw;
     max-width: 40px;
+    min-width: 30px;
+    max-width: 80px
 }
 
 .centerr {
     text-align:center;
+}
+
+.cont {
+    padding: 1vw;
+    padding-top: 1vw;
 }
