@@ -1,30 +1,31 @@
 {% load static %}
-<div class=" background_main "
+<div class="container-md background_main"
      style="background-image: url({% static 'img/микро2.png' %})">
-    <div class="row cc">
-        <div class="col-6" style="text-align:center">
-            <a class="" href="{% url 'exp:index' %}">
-                <img src="{% static 'img/logo11.png' %}" style="width: 100%;max-width:100px"
-                     alt="Судебно-криминалистическая экспертиза">
+    <div class="row">
+        <div class="col-6">
+            <a href="{% url 'exp:index' %}">
+                <p class="centerr"><img src="{% static 'img/logo11.png' %}" style="width: 100%;max-width:70px;"
+                                        alt="favicon"></p>
             </a>
         </div>
         <div class="w-100"></div>
         <div class="col-6">
-            <h6 class="fs-4 text color2 " style="text-align:center">Судебные и криминалистические экспертизы
+            <h6 class="fs-4 text color2 centerr">Судебные и криминалистические экспертизы
             </h6>
         </div>
 
         <div class="w-100"></div>
 
-        <div class=" col-6 color2" style="text-align:center">
-            <h6 class="cc">телефон</h6>
-            <h6 class="cc"><a class="color2" href="tel:+79093694701">+7(909)369-47-01</a></h6>
-            <h6 class="cc"><a class="color2" href="tel:+79317068600">+7(931)706-86-00</a></h6>
-            <h6 class="cc">watsApp</h6>
-            <h6 class="cc"><a class="color2" aria-label="Chat on WhatsApp" href="https://wa.me/+79118474970">+7(911)847-49-70</a>
-            </h6>
-            <h6 class="cc">email</h6>
-            <h6 class="cc" href="mailto:sudexpert2023@mail.ru">sudexpert2023@mail.ru</h6>
+        <div class="col-6">
+            <p class="centerr">
+                <a href="tel:+79093694701"><img src="{% static 'img/Viber_white.png' %}" class="social"></a>
+                <a aria-label="Chat on WhatsApp" href="https://wa.me/+79118474970">
+                    <img src="{% static 'img/WhatsApp_white.png' %}" class="social">
+                </a>
+                <a href="mailto:sudexpert2023@mail.ru">
+                    <img src="{% static 'img/Mail.ru_white.png' %}" class="social">
+                </a>
+            </p>
         </div>
     </div>
     <div class="col colomn"></div>
