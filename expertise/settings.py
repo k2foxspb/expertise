@@ -140,8 +140,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #      BASE_DIR / "static",
 #  ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 AUTH_USER_MODEL = "authapp.CustomUser"
 LOGIN_REDIRECT_URL = "exp:index"
 LOGOUT_REDIRECT_URL = "exp:index"
@@ -161,4 +161,3 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = name_mail
 EMAIL_HOST_PASSWORD = pass_mail
-
