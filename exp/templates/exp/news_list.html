@@ -16,37 +16,37 @@
 
     <div class="row" style="margin-top:20px">
         {% for item in object_list %}
-        <div class="card mb-3" style="max-width: 1800px">
+        <div class="card mb-3 color" style="max-width: 1800px">
             <div class="row g-0">
                 <div class="col-md-4">
                     {% if item.image %}
-                    <img src="{{item.image.url}}" class="img-fluid rounded-start" alt="{{ item.title }}" style="max-width:auto; max-height:250px">
+                    <img src="{{item.image.url}}" class="img-thumbnail img-fluid rounded-start" alt="{{ item.title }}" style="max-height:250px">
                     {% endif %}
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h4 class="card-title">{{ item.title }}</h4>
-                        <h5 class="card-title">{{ item.preamble }}</h5>
+                        <h4 class="card-title cole3">{{ item.title }}</h4>
+                        <h5 class="card-title cole3">{{ item.preamble }}</h5>
 
-                        <p class="card-text"><small class="text-muted">{{ item.updated }}</small></p>
-                        <p class="card-text">{{ item.body|slice:":200" }}</p>
+                        <p class="card-text cole3"><small class="text-muted cole3">{{ item.updated }}</small></p>
+                        <p class="card-text cole3">{{ item.body|slice:":200" }}</p>
                         <div class="col-6">
                             <a href="{% url 'exp:news_detail'  slug=item.slug %}"
-                               class="card-link">Подробнее</a>
+                               class="card-link cole3">Подробнее</a>
                         </div>
                         {% if perms.exp.change_news %}
-                        <div class="col ">
+                        <div class="col-6 ">
                             <a href="{% url 'exp:news_update'  slug=item.slug %}">
-                                <i class="far fa-edit ">редактировать</i>
+                                <i class="card-link cole3">редактировать</i>
                             </a>
                         </div>
                         {% endif %}
                         {% if perms.exp.delete_news %}
-                        <div class="col ">
+
                             <a href="{% url 'exp:news_delete'  slug=item.slug %}">
-                                <i class="bi bi-trash-fill ">удалить</i>
+                                <i class="card-link cole3">удалить</i>
                             </a>
-                        </div>
+
                         {% endif %}
                     </div>
                 </div>
@@ -90,9 +90,9 @@
 
     </div>
 
-    <div class="row justify-content-center align-items-center mt-3 mb-n3">
+    <div class="row justify-content-center align-items-center mt-3 mb-n3 ">
         <nav aria-label="Page navigation example">
-            <ul class="pagination">
+            <ul class="pagination ">
                 {% if page_obj.has_previous %}
                 <li class="page-item"><a class="page-link"
                                          href="?page={{ page_obj.previous_page_number }}">Предыдущая</a></li>
