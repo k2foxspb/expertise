@@ -29,7 +29,7 @@
                         <h5 class="card-title cole3">{{ item.preamble }}</h5>
 
                         <p class="card-text cole3"><small class="text-muted cole3">{{ item.updated }}</small></p>
-                        <p class="card-text cole3">{{ item.body|slice:":200" }}</p>
+                        <p class="card-text cole3">{{ item.body|slice:":200" }}...</p>
                         <div class="col-12">
 
                             <a href="{% url 'exp:news_detail'  slug=item.slug %}"
