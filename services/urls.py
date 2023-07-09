@@ -7,7 +7,7 @@ app_name = ServicesConfig.name
 
 urlpatterns = [
     path('', views.ServicesListView.as_view(), name='services'),
-    path("services/create/", views.ServicesCreateView.as_view(), name="services_create"),
+    path("create/", views.ServicesCreateView.as_view(), name="services_create"),
     path(
         "services/<slug:slug>/",
         views.ServicesDetailView.as_view(),
