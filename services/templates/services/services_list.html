@@ -1,0 +1,26 @@
+{% extends 'exp/base.html' %}
+
+{% block title %}
+    Услуги
+{% endblock title %}
+
+{% block content %}
+    {% if is_paginated %}
+        <div class="card my-2">
+            <div class="card-body">
+                <p class="card-text">Текущая страница: {{ page_num }}</p>
+            </div>
+        </div>
+    {% endif %}
+    <div class="container-md">
+        {% for item in object_list %}
+            <div class="container-md card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-header bg-transparent border-success">{{ item.title }}</div>
+                <div class="card-body text-success">
+                    <h5 class="card-title">dd</h5>
+                    <p class="card-text">{{ item.body }}</p>
+                </div>
+                <div class="card-footer bg-transparent border-success">{{ item.price }}</div>
+            </div>
+        {% endfor %}
+{% endblock content %}

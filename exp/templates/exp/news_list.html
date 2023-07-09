@@ -6,13 +6,13 @@
 
 {% block content %}
 <div class="container-md">
-    {% if page_num %}
-    <div class="card my-2">
-        <div class="card-body">
-            <p class="card-text">Текущая страница: {{ page_num }}</p>
-        </div>
-    </div>
-    {% endif %}
+{#    {% if page_obj %}#}
+{#    <div class="card my-2">#}
+{#        <div class="card-body">#}
+{#            <p class="card-text">Текущая страница: {{ page_num }}</p>#}
+{#        </div>#}
+{#    </div>#}
+{#    {% endif %}#}
 
     <div class="row" style="margin-top:20px">
         {% for item in object_list %}
@@ -29,7 +29,7 @@
                         <h5 class="card-title cole3">{{ item.preamble }}</h5>
 
                         <p class="card-text cole3"><small class="text-muted cole3">{{ item.updated }}</small></p>
-                        <p class="card-text cole3">{{ item.body|slice:":200" }}...</p>
+                        <p class="card-text cole3">{{ item.body|slice:":200" }}</p>
                         <div class="col-12">
 
                             <a href="{% url 'exp:news_detail'  slug=item.slug %}"

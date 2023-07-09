@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'exp',
     'crispy_forms',
-    'authapp',
     "crispy_bootstrap5",
-    'exp.services'
+    'authapp.apps.AuthappConfig',
+    'services.apps.ServicesConfig',
 ]
 
 MIDDLEWARE = [

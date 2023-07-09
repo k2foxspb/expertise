@@ -10,14 +10,14 @@
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?169"></script>
     <title>
         {% block title %}
-            Судебная экспертиза
+        Судебная экспертиза
         {% endblock title %}
     </title>
     <meta name="yandex-verification" content="582690300f804461"/>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block description %}
-        <meta name="description" content='ООО "СКЭ" выполняет комплекс услуг по экспертизе экологического
+    <meta name="description" content='ООО "СКЭ" выполняет комплекс услуг по экспертизе экологического
 состояния водных, почвенных и воздушных природных и  промышленных
 объектов.Специалисты ООО "Судебные и криминалистические экспертизы" помогают Арбитражным Судам установить
 истинную сумму ущерба, значительно снизить размер претензий РПН '/>
@@ -44,6 +44,7 @@
         });
 
 
+
     </script>
 
     <noscript>
@@ -52,13 +53,13 @@
 </head>
 <body class="bg-dark">
 {% block messages %}
-    {% include 'includes/messages.html' %}
+{% include 'includes/messages.html' %}
 {% endblock messages %}
 {% block navbar %}
-    {% include 'includes/navbar.html' %}
+{% include 'includes/navbar.html' %}
 {% endblock navbar %}
 {% block navTabs %}
-    {% include 'includes/nav&tabs.html' %}
+{% include 'includes/nav&tabs.html' %}
 {% endblock navTabs %}
 {% block content %}
 
@@ -70,6 +71,7 @@
         expanded: "0",
         tooltipButtonText: "Есть вопрос?"
     });
+
 </script>
 
 
@@ -86,6 +88,7 @@
 
         {% endif %})
         ;
+
 
 </script>
 <div class="container-xxl mt-auto">
