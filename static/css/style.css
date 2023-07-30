@@ -58,11 +58,12 @@
     margin-top: 3px;
     margin-right: 3px;
 }
+
 .colcol-4 {
     width: 60%;
     margin-top: 3px;
     margin-right: 3px;
-    margin-left:3px;
+    margin-left: 3px;
 }
 
 .colomn {
@@ -97,10 +98,17 @@
 }
 
 .centerr {
-    text-align:center;
+    text-align: center;
 }
 
 .cont {
     padding: 1vw;
     padding-top: 1vw;
+}
+
+.col-mda-4 {
+    flex: 0 0 auto;
+    max-width: 150px;
+    min-width: 10px;
+    text-align: center;
 }

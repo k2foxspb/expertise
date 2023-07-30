@@ -1,0 +1,19 @@
+{% extends 'exp/base.html' %}
+{% block content %}
+
+    <div class="container-md">
+        <div class="row g-0">
+            <div class="justify-content-center pt-3 ">
+                <div class="card shadow color">
+                    <div class="card-body">
+                        <h5 class="card-title cole3">{{ object.title }}</h5>
+                        <p class="card-text cole3">
+                            {{ object.body }}
+                        </p>
+                        <a href="{% url 'exp:index' %}" class="btn btn-primary">Назад</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock content %}

@@ -15,36 +15,36 @@
 {#    {% endif %}#}
 
     <div class="row" style="margin-top:20px">
-        {% for item in object_list %}
+        {% for list in object_list %}
         <div class="card mb-3 color" style="max-width: 1800px">
             <div class="row g-0">
                 <div class="col-md-4">
-                    {% if item.image %}
-                    <img src="{{item.image.url}}" class="img-thumbnail img-fluid rounded-start" alt="{{ item.title }}" style="max-height:250px">
+                    {% if list.image %}
+                    <img src="{{list.image.url}}" class="img-thumbnail img-fluid rounded-start" alt="{{ item.title }}" style="max-height:250px">
                     {% endif %}
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h4 class="card-title cole3">{{ item.title }}</h4>
-                        <h5 class="card-title cole3">{{ item.preamble }}</h5>
+                        <h4 class="card-title cole3">{{ list.title }}</h4>
+                        <h5 class="card-title cole3">{{ list.preamble }}</h5>
 
                         <p class="card-text cole3"><small class="text-muted cole3">{{ item.updated }}</small></p>
-                        <p class="card-text cole3">{{ item.body|slice:":200" }}</p>
+                        <p class="card-text cole3">{{ list.body|slice:":200" }}</p>
                         <div class="col-12">
 
-                            <a href="{% url 'exp:news_detail'  slug=item.slug %}"
+                            <a href="{% url 'exp:news_detail'  slug=list.slug %}"
                                class="card-link cole3 col-5">Подробнее</a>
 
                         {% if perms.exp.change_news %}
 
-                            <a href="{% url 'exp:news_update'  slug=item.slug %}">
+                            <a href="{% url 'exp:news_update'  slug=list.slug %}">
                                 <i class="card-link cole3 col-5">редактировать</i>
                             </a>
 
                         {% endif %}
                         {% if perms.exp.delete_news %}
 
-                            <a href="{% url 'exp:news_delete'  slug=item.slug %}">
+                            <a href="{% url 'exp:news_delete'  slug=list.slug %}">
                                 <i class="card-link cole3 col-5">удалить</i>
                             </a>
 
