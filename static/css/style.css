@@ -109,5 +109,11 @@
 .col-mda-4 {
     flex: 0 0 auto;
     max-width: 20vw;
+    min-width: 10vw;
     text-align: center;
+}
+.services {
+    max-height: 20vw;
+    max-width: 20vw;
+    min-width: 10vw;
 }
