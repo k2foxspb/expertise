@@ -6,6 +6,7 @@ from services.apps import ServicesConfig
 app_name = ServicesConfig.name
 
 urlpatterns = [
+    path('', views.ServicesListView.as_view(), name='services'),
     path("create/", views.ServicesCreateView.as_view(), name="services_create"),
     path(
         "<slug:slug>/",

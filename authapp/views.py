@@ -39,7 +39,7 @@ class CustomLogoutView(LogoutView):
 class RegisterView(CreateView):
     model = get_user_model()
     form_class = forms.CustomUserCreationForm
-    success_url = reverse_lazy("exp:index")
+    success_url = reverse_lazy("services:services")
 
     def form_valid(self, form):
         form.send_email()

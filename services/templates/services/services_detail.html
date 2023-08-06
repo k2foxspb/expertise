@@ -1,4 +1,7 @@
 {% extends 'exp/base.html' %}
+{% block description %}
+    <meta name="description" content={{ object.title }}/>
+{% endblock description %}
 {% block content %}
 
     <div class="container-md">
@@ -8,11 +11,32 @@
                     <div class="card-body">
                         <h5 class="card-title cole3">{{ object.title }}</h5>
                         <p class="card-text cole3">
+                            {% autoescape off %}
                             {{ object.body }}
+                            {% endautoescape %}
+
                         </p>
-                        <a href="{% url 'exp:index' %}" class="btn btn-primary">Назад</a>
+                    <p class="card-text cole3">
+                        от {{ object.price }} &#8381
+                    </p>
+                        <a href="{% url 'services:services' %}" class="btn btn-primary">Назад</a>
+                        {% if perms.exp.change_news %}
+
+                            <a href="{% url 'services:services_update'  slug=object.slug %}">
+                                <i class="card-link cole3 col-5">редактировать</i>
+                            </a>
+
+                        {% endif %}
+                        {% if perms.services.delete_services %}
+
+                            <a href="{% url 'exp:news_delete'  slug=object.slug %}">
+                                <i class="card-link cole3 col-5">удалить</i>
+                            </a>
+
+                        {% endif %}
                     </div>
                 </div>
+
             </div>
         </div>
 
