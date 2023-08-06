@@ -46,4 +46,4 @@ class Services(models.Model):
     class Meta:
         verbose_name = "service"
         verbose_name_plural = "services"
-        ordering = ("-created",)
+        ordering = ("created",)
