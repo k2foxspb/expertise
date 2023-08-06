@@ -108,7 +108,6 @@
 
 .col-mda-4 {
     flex: 0 0 auto;
-    max-width: 200px;
-    min-width: 10px;
+    max-width: 20vw;
     text-align: center;
 }
