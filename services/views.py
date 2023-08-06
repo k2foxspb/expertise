@@ -7,7 +7,7 @@ from services import models as services_model
 
 class ServicesListView(ListView):
     model = services_model.Services
-    paginate_by = 3
+
 
     def get_queryset(self):
         return super().get_queryset().filter(deleted=False)
