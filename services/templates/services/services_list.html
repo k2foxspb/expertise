@@ -5,10 +5,10 @@
             <div class="row g-0" style="text-align: center">
                 {% for list in object_list %}
                     <div class="col-mda-4" style="margin:5px">
-                        <a href="{% url 'services:services_detail' slug=list.slug %}">
+                        <a href="{% url 'services:services_detail' slug=list.slug %}" target="_blank">
                             <img src="{{ list.image.url }}" alt="{{ list.title }}"
                                  class="img-thumbnail img-fluid rounded-start"
-                                 style="max-height:200px">
+                                 style="max-height:200px;max-width: 200px">
                         </a>
                     </div>
                 {% endfor %}
