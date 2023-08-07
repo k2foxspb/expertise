@@ -16,14 +16,14 @@ def services_image_path(instance, filename):
 
 
 class Services(models.Model):
-    title = models.CharField(max_length=255, unique=True, verbose_name="Title")
-    body = models.TextField(blank=True, null=True, verbose_name="Body")
-    price = models.DecimalField(decimal_places=2, max_digits=20)
-    created = models.DateTimeField(auto_now_add=True, verbose_name="Created", editable=False)
-    updated = models.DateTimeField(auto_now=True, verbose_name="Edited", editable=False)
-    deleted = models.BooleanField(default=False)
-    slug = models.CharField(verbose_name='slug', max_length=255, blank=True, unique=True)
-    image = models.ImageField(upload_to=services_image_path, null=True, blank=True)
+    title = models.CharField(max_length=255, unique=True, verbose_name="Заголовок")
+    body = models.TextField(blank=True, null=True, verbose_name="Текст")
+    price = models.DecimalField(decimal_places=2, max_digits=20, verbose_name='Цена')
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Время создания", editable=False)
+    updated = models.DateTimeField(auto_now=True, verbose_name="Обновление", editable=False)
+    deleted = models.BooleanField(default=False,verbose_name='пометить удалённым')
+    slug = models.CharField(verbose_name='URL-адрес', max_length=255, blank=True, unique=True)
+    image = models.ImageField(upload_to=services_image_path, null=True, blank=True, verbose_name='иконка')
 
     def get_absolute_url(self):
         return reverse("article_detail", kwargs={"slug": self.slug})
@@ -44,6 +44,6 @@ class Services(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        verbose_name = "service"
-        verbose_name_plural = "services"
+        verbose_name = "Услуга"
+        verbose_name_plural = "Услуги"
         ordering = ("created",)

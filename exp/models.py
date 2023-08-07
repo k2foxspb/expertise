@@ -17,14 +17,14 @@ def news_image_path(instance, filename):
 
 
 class News(models.Model):
-    title = models.CharField(max_length=256, unique=True, verbose_name="Title")
-    preamble = models.CharField(max_length=1024, verbose_name="Preamble")
-    body = models.TextField(blank=True, null=True, verbose_name="Body")
-    created = models.DateTimeField(auto_now_add=True, verbose_name="Created", editable=False)
-    updated = models.DateTimeField(auto_now=True, verbose_name="Edited", editable=False)
-    deleted = models.BooleanField(default=False)
-    slug = models.CharField(verbose_name='slug', max_length=255, blank=True, unique=True)
-    image = models.ImageField(upload_to=news_image_path, null=True, blank=True)
+    title = models.CharField(max_length=256, unique=True, verbose_name="Заголовок")
+    preamble = models.CharField(max_length=1024, verbose_name="Преамбула")
+    body = models.TextField(blank=True, null=True, verbose_name="Текст")
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Создано", editable=False)
+    updated = models.DateTimeField(auto_now=True, verbose_name="Отредактировано", editable=False)
+    deleted = models.BooleanField(default=False, verbose_name='Пометить как удалённую')
+    slug = models.CharField(verbose_name='URL-адрес', max_length=255, blank=True, unique=True)
+    image = models.ImageField(upload_to=news_image_path, null=True, blank=True, verbose_name='Иконка')
 
     def get_absolute_url(self):
         return reverse("article_detail", kwargs={"slug": self.slug})
@@ -45,6 +45,6 @@ class News(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        verbose_name = "News"
-        verbose_name_plural = "News"
+        verbose_name = "Новость"
+        verbose_name_plural = "Новости"
         ordering = ("-created",)
