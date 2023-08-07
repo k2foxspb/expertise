@@ -1,20 +1,23 @@
 <ul class="nav justify-content-center color container-md">
     <li class="nav-item">
-        <a class="nav-link active cole3" aria-current="page" href="{% url 'exp:aboutWork' %}">О нас</a>
-    </li>
     <li class="nav-item">
-        <a class="nav-link cole3" href="{% url 'exp:about' %}">Контакты</a>
+        <a class="nav-link cole3" href="{% url 'exp:news' %}">Новости</a>
+    </li>
+    <a class="nav-link cole3" href="{% url 'exp:about' %}">Контакты</a>
     </li>
     <li class="nav-item">
         <a class="nav-link cole3" href="{% url 'exp:employ' %}">Наши сотрудники</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link cole3" href="{% url 'exp:news' %}">Новости</a>
+        <a class="nav-link active cole3" aria-current="page" href="{% url 'exp:aboutWork' %}">О нас</a>
     </li>
     {% if user.is_staff %}
-        <li><a class="nav-link cole3" href="{% url 'admin:index' %}">Панель
-            администратора</a></li>
-        <li><a class="nav-link cole3" href="{% url 'authapp:logout' %}">Выход</a></li>
+        <li><a class="nav-link admin" href="{% url 'admin:index' %}">Панель
+            администратора</a>
+        </li>
+        <li><a class="nav-link admin" href="{% url 'services:services_create' %}">Добавить услугу</a>
+        </li>
+        <li><a class="nav-link admin" href="{% url 'authapp:logout' %}">Выход</a></li>
     {% else %}
         <li><a class="nav-link cole3" href="{% url 'authapp:login' %}">Вход</a></li>
     {% endif %}

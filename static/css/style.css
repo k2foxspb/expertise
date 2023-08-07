@@ -112,8 +112,13 @@
     min-width: 20vw;
     text-align: center;
 }
+
 .services {
     max-height: 20vw;
     max-width: 20vw;
     min-width: 20vw;
+}
+
+.admin {
+    color: #181818;
 }
