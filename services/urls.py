@@ -1,5 +1,3 @@
-from django.contrib.sitemaps import GenericSitemap
-from django.contrib.sitemaps.views import sitemap
 from django.urls import path
 
 from services import views
