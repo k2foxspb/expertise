@@ -1,0 +1,44 @@
+{% load static %}
+{#<div id="vk_community_messages" class="position-sticky header"></div>#}
+{#<script type="text/javascript">#}
+{#    VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {#}
+{#        expanded: "0",#}
+{#        tooltipButtonText: "Есть вопрос?"#}
+{#    });#}
+{##}
+{#</script>#}
+
+
+<!-- VK Widget -->
+
+{% block js %}
+<script>
+    $(document).ready(function () {
+
+        {% if messages %}
+            // Toasts
+            $(".toast").toast({delay: 5000});
+            $(".toast").toast("show");
+        {% endif %}
+
+    });
+</script>
+{% endblock js %}
+
+<div class="container-xxl mt-auto">
+    <div class="row justify-content-center">
+        <div class="col-sm-9 col-md-5 text-center">
+            <p>
+                <strong class="color2">Мы в соц сетях!</strong>
+            </p>
+            <a href="https://vk.com/club216989087"><img alt="VK" class="width"
+                                                        src="{% static 'img/social_media/VK.png' %}"></a>
+
+            <a href="https://instagram.com/forensic_forever?igshid=MzRlODBiNWFlZA"><img alt="instagram"
+                                                                                        class="width"
+                                                                                        src="{% static 'img/social_media/instagram.png' %}"></a>
+            <a href="https://t.me/sudexpert2023"><img alt="telegram" class="width"
+                                                      src="{% static 'img/social_media/telegram.png' %}"></a>
+        </div>
+    </div>
+</div>

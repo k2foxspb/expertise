@@ -21,9 +21,10 @@ class Services(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=20, verbose_name='Цена')
     created = models.DateTimeField(auto_now_add=True, verbose_name="Время создания", editable=False)
     updated = models.DateTimeField(auto_now=True, verbose_name="Обновление", editable=False)
-    deleted = models.BooleanField(default=False,verbose_name='пометить удалённым')
+    deleted = models.BooleanField(default=False, verbose_name='пометить удалённым')
     slug = models.CharField(verbose_name='URL-адрес', max_length=255, blank=True, unique=True)
-    image = models.ImageField(upload_to=services_image_path, null=True, blank=True, verbose_name='иконка')
+    image = models.ImageField(upload_to=services_image_path, verbose_name='иконка')
+    description = models.CharField(max_length=255, blank=True, verbose_name='текст для поисковиков с ключивыми словами')
 
     def get_absolute_url(self):
         return reverse("article_detail", kwargs={"slug": self.slug})

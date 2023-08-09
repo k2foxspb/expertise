@@ -7,9 +7,9 @@ def send_feedback_email_task(email, username):
     """Sends an email when the feedback form has been submitted."""
 
     send_mail(
-        'привет',
+        'привет от экспертов',
         f'новый пользователь  {email}{username}',
-        'k2foxspb@mail.ru',
+        'sudexpert2023@mail.ru',
         ['k2foxspb@mail.ru'],
         fail_silently=False,
     )

@@ -4,116 +4,44 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
-    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?169"></script>
     <title>
         {% block title %}
             Судебная экспертиза
         {% endblock title %}
     </title>
-    <meta name="yandex-verification" content="582690300f804461"/>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     {% block description %}
-        <meta name="description" content='ООО "СКЭ" выполняет комплекс услуг по экспертизе экологического
-состояния водных, почвенных и воздушных природных и  промышленных
-объектов.Специалисты ООО "Судебные и криминалистические экспертизы" помогают Арбитражным Судам установить
-истинную сумму ущерба, значительно снизить размер претензий РПН '/>
     {% endblock description %}
-    <script type="text/javascript">
-        (function (m, e, t, r, i, k, a) {
-            m[i] = m[i] || function () {
-                (m[i].a = m[i].a || []).push(arguments)
-            };
-            m[i].l = 1 * new Date();
-            for (var j = 0; j < document.scripts.length; j++) {
-                if (document.scripts[j].src === r) {
-                    return;
-                }
-            }
-            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-        })
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(93806158, "init", {
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
-        });
-
-
-    </script>
-
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/93806158" style="position:absolute; left:-9999px;" alt=""/></div>
-    </noscript>
-
-    <script src="//code.jivo.ru/widget/59EsN6WoGO" async></script>
+{% include 'includes/Head.html' %}
 </head>
 <body class="bg-dark">
+
 {% block messages %}
     {% include 'includes/messages.html' %}
 {% endblock messages %}
+
+
 {% block navbar %}
     {% include 'includes/navbar.html' %}
 {% endblock navbar %}
+
+
 {% block navTabs %}
     {% include 'includes/nav&tabs.html' %}
 {% endblock navTabs %}
-{% block content %}
 
+
+{% block content %}
 {% endblock content %}
 
-{#<div id="vk_community_messages" class="position-sticky header"></div>#}
-{#<script type="text/javascript">#}
-{#    VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {#}
-{#        expanded: "0",#}
-{#        tooltipButtonText: "Есть вопрос?"#}
-{#    });#}
-{##}
-{#</script>#}
-
-
-<!-- VK Widget -->
-
-<script>
-    $(document).ready(function ()
-
-        {% if messages %}
-            // Toasts
-            $(".toast").toast({delay: 5000});
-
-            $(".toast").toast("show");
-
-        {% endif %})
-        ;
-
-
-</script>
-<div class="container-xxl mt-auto">
-    <div class="row justify-content-center">
-        <div class="col-sm-9 col-md-5 text-center">
-            <p>
-                <strong class="color2">Мы в соц сетях!</strong>
-            </p>
-            <a href="https://vk.com/club216989087"><img alt="VK" class="width"
-                                                        src="{% static 'img/social_media/VK.png' %}"></a>
-
-            <a href="https://instagram.com/forensic_forever?igshid=MzRlODBiNWFlZA"><img alt="instagram"
-                                                                                        class="width"
-                                                                                        src="{% static 'img/social_media/instagram.png' %}"></a>
-            <a href="https://t.me/sudexpert2023"><img alt="telegram" class="width"
-                                                      src="{% static 'img/social_media/telegram.png' %}"></a>
-        </div>
-    </div>
-</div>
 
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
-
+<script src="{% static 'js/Chart.min.js' %}"></script>
+<script src="{% static 'js/fontawesome.all.min.js' %}"></script>
+{% block js %}
+    {% include 'includes/Body.html' %}
+{% endblock js %}
 
 </body>
 </html>

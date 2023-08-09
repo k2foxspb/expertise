@@ -1,5 +1,7 @@
 {% extends 'exp/base.html' %}
-
+{% block description %}
+        <meta name="description" content={{ object.description }}/>
+{% endblock description %}
 
 {% block title %}
     {{ object.title|default:"Новости" }}

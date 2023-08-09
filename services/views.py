@@ -15,7 +15,7 @@ class ServicesListView(ListView):
 
 class ServicesCreateView(PermissionRequiredMixin, CreateView):
     model = services_model.Services
-    fields = ('title', 'body', 'image', 'price')
+    fields = ('title', 'body', 'image', 'price', 'description')
     success_url = reverse_lazy("services:services")
     permission_required = ("services.services_news",)
 
@@ -26,7 +26,7 @@ class ServicesDetailView(DetailView):
 
 class ServicesUpdateView(PermissionRequiredMixin, UpdateView):
     model = services_model.Services
-    fields = ('title', 'body', 'price', 'deleted', 'image')
+    fields = ('title', 'body', 'price', 'deleted', 'image', 'description')
     success_url = reverse_lazy("services:services")
     permission_required = ("services.change_services",)
 

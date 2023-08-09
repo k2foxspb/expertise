@@ -65,3 +65,8 @@ class CustomUserChangeForm(forms.ModelForm):
             if data < 18 or data > 90:
                 raise ValidationError(_("Please, enter a valid age!"))
         return data
+
+    def send_email(self):
+        send_feedback_email_task.delay(
+            self.cleaned_data["email", "username"],
+        )

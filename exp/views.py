@@ -31,7 +31,7 @@ class NewsListView(ListView):
 
 class NewsCreateView(PermissionRequiredMixin, CreateView):
     model = exp_models.News
-    fields = ('title', 'preamble', 'body', 'image')
+    fields = ('title', 'preamble', 'body', 'image', 'description')
     success_url = reverse_lazy("exp:news")
     permission_required = ("exp.add_news",)
 
@@ -42,7 +42,7 @@ class NewsDetailView(DetailView):
 
 class NewsUpdateView(PermissionRequiredMixin, UpdateView):
     model = exp_models.News
-    fields = ('title', 'preamble', 'body', 'deleted', 'image')
+    fields = ('title', 'preamble', 'body', 'deleted', 'image', 'description')
     success_url = reverse_lazy("exp:news")
     permission_required = ("exp.change_news",)
 
