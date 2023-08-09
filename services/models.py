@@ -27,7 +27,7 @@ class Services(models.Model):
     description = models.CharField(max_length=255, blank=True, verbose_name='текст для поисковиков с ключивыми словами')
 
     def get_absolute_url(self):
-        return reverse("article_detail", kwargs={"slug": self.slug})
+        return reverse("services:services_detail", kwargs={"slug": self.slug})
 
     def __str__(self) -> str:
         return f"{self.pk} {self.title}"

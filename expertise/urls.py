@@ -18,9 +18,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import NewsSitemap, ServicesSitemap, StaticViewSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'services': ServicesSitemap,
+    'news': NewsSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('', include('services.urls', namespace="services")),
     path('expertise/', (include('exp.urls', namespace='exp'))),
     path("authapp/", include("authapp.urls", namespace="authapp")),
