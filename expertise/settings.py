@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = host
 
@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'authapp.apps.AuthappConfig',
     'services.apps.ServicesConfig',
-    'debug_toolbar'
+    'debug_toolbar',
+    "django.contrib.sites",  # новые
+    "django.contrib.sitemaps"
 ]
 
 MIDDLEWARE = [
@@ -163,3 +165,5 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = name_mail
 EMAIL_HOST_PASSWORD = pass_mail
+
+SITE_ID = 1
