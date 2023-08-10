@@ -16,13 +16,13 @@ def services_image_path(instance, filename):
 
 
 class Services(models.Model):
-    title = models.CharField(max_length=255, unique=True, verbose_name="Заголовок")
+    title = models.CharField(max_length=255, unique=True, verbose_name="Заголовок", editable=False)
     body = models.TextField(blank=True, null=True, verbose_name="Текст")
     price = models.DecimalField(decimal_places=2, max_digits=20, verbose_name='Цена')
     created = models.DateTimeField(auto_now_add=True, verbose_name="Время создания", editable=False)
     updated = models.DateTimeField(auto_now=True, verbose_name="Обновление", editable=False)
     deleted = models.BooleanField(default=False, verbose_name='пометить удалённым')
-    slug = models.CharField(verbose_name='URL-адрес', max_length=255, blank=True, unique=True)
+    slug = models.CharField(verbose_name='URL-адрес', max_length=255, blank=True, unique=True, editable=False)
     image = models.ImageField(upload_to=services_image_path, verbose_name='иконка')
     description = models.CharField(max_length=255, blank=True, verbose_name='текст для поисковиков с ключивыми словами')
 

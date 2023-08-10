@@ -6,7 +6,6 @@ from exp.apps import ExpConfig
 app_name = ExpConfig.name
 
 urlpatterns = [
-    path('', views.MainPageView.as_view(), name='index'),
     path('about', views.AboutUsView.as_view(), name='about'),
     path('employees', views.OurEmployeesView.as_view(), name='employ'),
     path('news', views.NewsListView.as_view(), name='news'),
