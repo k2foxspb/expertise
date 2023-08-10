@@ -5,10 +5,6 @@ from django.views.generic import CreateView, DeleteView, DetailView, ListView, T
 from exp import models as exp_models
 
 
-class MainPageView(TemplateView):
-    template_name = "exp/base.html"
-
-
 class AboutUsView(TemplateView):
     template_name = "exp/aboutUs.html"
 

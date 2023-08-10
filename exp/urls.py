@@ -12,7 +12,7 @@ urlpatterns = [
     path('work', views.AboutView.as_view(), name='aboutWork'),
     path("news/create/", views.NewsCreateView.as_view(), name="news_create"),
     path(
-        "news/<slug:slug>/detail",
+        "news/<slug:slug>/",
         views.NewsDetailView.as_view(),
         name="news_detail",
     ),

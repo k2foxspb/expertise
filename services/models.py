@@ -16,7 +16,7 @@ def services_image_path(instance, filename):
 
 
 class Services(models.Model):
-    title = models.CharField(max_length=255, unique=True, verbose_name="Заголовок", editable=False)
+    title = models.CharField(max_length=255, unique=True, verbose_name="Заголовок")
     body = models.TextField(blank=True, null=True, verbose_name="Текст")
     price = models.DecimalField(decimal_places=2, max_digits=20, verbose_name='Цена')
     created = models.DateTimeField(auto_now_add=True, verbose_name="Время создания", editable=False)
