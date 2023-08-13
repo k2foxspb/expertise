@@ -7,16 +7,21 @@
 
 {% endblock description %}
 {% block content %}
-    <div class="container-md ">
-            <div class="row g-0 justify-content-around">
+    <div class="carousel-3d" data-gap="20" data-bfc>
+        <figure>
+
                 {% for list in object_list %}
-                    <div class="col-mda-4 " style="margin:5px">
+                    <div>
                         <a href="{% url 'services:services_detail' slug=list.slug %}">
-                            <img src="{{ list.image.url }}" alt="{{ list.title }}"
-                                 class="img-thumbnail img-fluid rounded-start services">
+                            <img src="{{ list.image.url }}" alt="{{ list.title }}">
                         </a>
                     </div>
                 {% endfor %}
-            </div>
+
+        </figure>
+        <nav>
+            <button class="nav prev">Назад</button>
+            <button class="nav next">Вперед</button>
+        </nav>
     </div>
 {% endblock %}
