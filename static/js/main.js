@@ -97,7 +97,26 @@ function carousel(root) {
                 rotateCarousel(currImage);
                 mouseDown = false;
             }
+            let cur;
 
+            function showcur() {
+                cur = setInterval(function () {
+                    currImage++;
+                    rotateCarousel(currImage);
+                }, 2000);
+            }
+
+            function clearcur() {
+                clearInterval(cur);
+            }
+
+            root.onmouseover = function () {
+                clearcur();
+            }
+            root.onmouseout = function () {
+                showcur();
+            }
+            showcur();
         }
     };
 }
