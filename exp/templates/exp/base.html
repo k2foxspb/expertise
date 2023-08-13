@@ -10,9 +10,10 @@
         {% endblock title %}
     </title>
 
-    {% block description %}
-    {% endblock description %}
-{% include 'includes/Head.html' %}
+    <meta name="description" content='{% block description %}{% endblock description %}'>
+    <meta name="keywords"
+          content='{% block keywords %}{% endblock keywords %}'/>
+    {% include 'includes/Head.html' %}
 </head>
 <body >
 

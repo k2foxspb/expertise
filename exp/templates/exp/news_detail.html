@@ -1,8 +1,10 @@
 {% extends 'exp/base.html' %}
 {% block description %}
-        <meta name="description" content="{{ object.description }}"/>
+        {{ object.preamble }}
 {% endblock description %}
-
+{% block keywords %}
+    {{ object.keyword }}
+{% endblock keywords %}
 {% block title %}
     {{ object.title|default:"Новости" }}
 {% endblock title %}

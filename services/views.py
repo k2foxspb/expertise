@@ -8,14 +8,13 @@ from services import models as services_model
 class ServicesListView(ListView):
     model = services_model.Services
 
-
     def get_queryset(self):
         return super().get_queryset().filter(deleted=False)
 
 
 class ServicesCreateView(PermissionRequiredMixin, CreateView):
     model = services_model.Services
-    fields = ('title', 'body', 'image', 'price', 'description')
+    fields = ('title', 'body', 'image', 'price', 'description',)
     success_url = reverse_lazy("services:services")
     permission_required = ("services.services_news",)
 

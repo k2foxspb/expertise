@@ -24,7 +24,8 @@ class Services(models.Model):
     deleted = models.BooleanField(default=False, verbose_name='пометить удалённым')
     slug = models.CharField(verbose_name='URL-адрес', max_length=255, blank=True, unique=True, editable=False)
     image = models.ImageField(upload_to=services_image_path, verbose_name='иконка')
-    description = models.CharField(max_length=255, blank=True, verbose_name='текст для поисковиков с ключивыми словами')
+    description = models.CharField(max_length=255, blank=True, verbose_name='краткое описание')
+    keyword = models.CharField(max_length=255, blank=True, null=True, verbose_name='ключевые слова')
 
     def get_absolute_url(self):
         return reverse("services:services_detail", kwargs={"slug": self.slug})

@@ -1,7 +1,12 @@
 {% extends 'exp/base.html' %}
+
 {% block description %}
-    <meta name="description" content="{{ object.description }}"/>
+    {{ object.description }}
 {% endblock description %}
+
+{% block keywords %}
+    {{ object.keyword }}
+{% endblock keywords %}
 
 {% block content %}
     <div class="container-md">
