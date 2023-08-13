@@ -110,7 +110,7 @@ $("a:not([href*=\\#])").click(function() {
         let url = $(this).attr('href');
         window.setTimeout(function() {
             window.location.href = url;
-        }, 500);
+        }, 200);
         return false;
     }
 });
