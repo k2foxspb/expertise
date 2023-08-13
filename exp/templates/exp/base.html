@@ -14,8 +14,7 @@
     {% endblock description %}
 {% include 'includes/Head.html' %}
 </head>
-<body >
-
+<body>
 {% block messages %}
     {% include 'includes/messages.html' %}
 {% endblock messages %}
@@ -34,13 +33,15 @@
 {% block content %}
 {% endblock content %}
 
-
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 <script src="{% static 'js/Chart.min.js' %}"></script>
 <script src="{% static 'js/fontawesome.all.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
 <script src="{% static 'js/затухание.js' %}"></script>
+<script src="{% static 'js/мандавошка_1.js' %}"></script>
+<script src="{% static 'js/мандавошка_2.js' %}"></script>
+<script src="{% static 'js/мандавошка_3.js' %}"></script>
 {% block js %}
     {% include 'includes/Body.html' %}
 {% endblock js %}
