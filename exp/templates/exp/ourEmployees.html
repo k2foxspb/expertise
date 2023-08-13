@@ -5,6 +5,41 @@
 {% endblock %}
 {% block content %}
     <div class="color2">
+        {% if user.is_staff %}
+            <div class="container text-left ">
+                <div class="row">
+                    <div class="col-4">
+                        <img width="150" height="150" src="{% static 'img/я.jpg' %}" class="img-thumbnail"
+                             alt="">
+                    </div>
+                    <div class="col-8 card-text text-justify">
+                        <p>
+                            &#10031;<b>Валерка</b><br>
+                            &#8226; Брат жены эксперта<br>
+
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        {% endif %}
+        <div class="container text-left">
+            <div class="row">
+                <div class="col-4">
+                    <img width="150" height="150" src="{% static 'img/Фокин.jpg' %}" class="img-thumbnail"
+                         alt="">
+                </div>
+                <div class="col-8 card-text text-justify">
+                    <p>
+                        &#128269;<b>Фокин Валерий Валерьевич</b><br>
+                        &#8226; web-разработчик<br>
+                        &#8226; Образование: Государственный университет морского и речного флота имени адмирала
+                        Макарова.
+                    </p>
+                </div>
+            </div>
+        </div>
         <div class="container text-left">
             <div class="row">
                 <div class="col-4">
@@ -23,6 +58,78 @@
                         &#8226; Автор более 70 научных работ, индекс Хирша 15.<br>
                         &#8226; Член Палаты судебных экспертов им. Ю. Г. Корухова с 2011 г.<br>
                         &#8226; Доцент Санкт-Петербургского политехнического университета им. Петра Великого.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-left ">
+            <div class="row">
+                <div class="col-4">
+                    <img width="150" height="150" src="{% static 'img/Фогель.jpg' %}" class="img-thumbnail"
+                         alt="">
+                </div>
+                <div class="col-8 card-text text-justify">
+                    <p>
+                        &#128269;<b>Фогель Алена Александровна</b><br>
+                        &#8226; Эксперт-эколог, стаж профессиональной деятельности более 10 лет. <br>
+                        &#8226; Образование: Алтайский Государственный Технический Университет им. И. И. Ползунова по
+                        специальности: “Охрана окружающей среды и рациональное использование природных ресурсов”,
+                        специализация: промышленная экология (диплом с отличием, 2004-2009 гг.). <br>
+                        &#8226; Кандидат технических наук (2013 г.)<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container text-left ">
+            <div class="row">
+                <div class="col-4">
+                    <img width="150" height="150" src="{% static 'img/Ищук.jpg' %}" class="img-thumbnail"
+                         alt="">
+                </div>
+                <div class="col-8 card-text text-justify">
+                    <p>
+                        &#128269;<b>Ищук Диана Леонидовна</b><br>
+                        &#8226; Инженер-исследователь. <br>
+                        &#8226; Образование: Санкт-Петербургский политехнический университет, Высшая школа юриспруденции
+                        и судебно-технической экспертизы.
+                        &#8226; Специализируется в области рамановской спектроскопии.<br>
+                        <br> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container text-left ">
+            <div class="row">
+                <div class="col-4">
+                    <img width="150" height="150" src="{% static 'img/Денисова.jpg' %}" class="img-thumbnail"
+                         alt="">
+                </div>
+                <div class="col-8 card-text text-justify">
+                    <p>
+                        &#128269;<b>Денисова Юлия Юрьевна</b><br>
+                        &#8226; Инженер-исследователь. <br>
+                        &#8226; Образование: Санкт-Петербургский политехнический университет, Высшая школа юриспруденции
+                        и судебно-технической экспертизы.
+                        &#8226; Специализируется в области оптических методов исследования и хромато-масс-спектрометрии.<br>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container text-left ">
+            <div class="row">
+                <div class="col-4">
+                    <img width="150" height="150" src="{% static 'img/Барова.png' %}" class="img-thumbnail"
+                         alt="">
+                </div>
+                <div class="col-8 card-text text-justify">
+                    <p>
+                        &#128269;<b>Барова Валерия Олеговна</b><br>
+                        &#8226; Инженер-исследователь. <br>
+                        &#8226; Образование: Санкт-Петербургский политехнический университет, Высшая школа юриспруденции
+                        и судебно-технической экспертизы.
+                        &#8226; • Специализируется в области хроматографических методов исследования.<br>
                     </p>
                 </div>
             </div>
@@ -108,114 +215,5 @@
                 </div>
             </div>
         </div>
-        <div class="container text-left ">
-            <div class="row">
-                <div class="col-4">
-                    <img width="150" height="150" src="{% static 'img/Фогель.jpg' %}" class="img-thumbnail"
-                         alt="">
-                </div>
-                <div class="col-8 card-text text-justify">
-                    <p>
-                        &#128269;<b>Фогель Алена Александровна</b><br>
-                        &#8226; Эксперт-эколог, стаж профессиональной деятельности более 10 лет. <br>
-                        &#8226; Образование: Алтайский Государственный Технический Университет им. И. И. Ползунова по
-                        специальности: “Охрана окружающей среды и рациональное использование природных ресурсов”,
-                        специализация: промышленная экология (диплом с отличием, 2004-2009 гг.). <br>
-                        &#8226; Кандидат технических наук (2013 г.)<br>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container text-left ">
-            <div class="row">
-                <div class="col-4">
-                    <img width="150" height="150" src="{% static 'img/Ищук.jpg' %}" class="img-thumbnail"
-                         alt="">
-                </div>
-                <div class="col-8 card-text text-justify">
-                    <p>
-                        &#128269;<b>Ищук Диана Леонидовна</b><br>
-                        &#8226; Инженер-исследователь. <br>
-                        &#8226; Образование: Санкт-Петербургский политехнический университет, Высшая школа юриспруденции
-                        и судебно-технической экспертизы.
-                        &#8226; Специализируется в области рамановской спектроскопии.<br>
-                        <br> <br>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container text-left ">
-            <div class="row">
-                <div class="col-4">
-                    <img width="150" height="150" src="{% static 'img/Денисова.jpg' %}" class="img-thumbnail"
-                         alt="">
-                </div>
-                <div class="col-8 card-text text-justify">
-                    <p>
-                        &#128269;<b>Денисова Юлия Юрьевна</b><br>
-                        &#8226; Инженер-исследователь. <br>
-                        &#8226; Образование: Санкт-Петербургский политехнический университет, Высшая школа юриспруденции
-                        и судебно-технической экспертизы.
-                        &#8226; Специализируется в области оптических методов исследования и хромато-масс-спектрометрии.<br>
-                        <br>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container text-left ">
-            <div class="row">
-                <div class="col-4">
-                    <img width="150" height="150" src="{% static 'img/Барова.png' %}" class="img-thumbnail"
-                         alt="">
-                </div>
-                <div class="col-8 card-text text-justify">
-                    <p>
-                        &#128269;<b>Барова Валерия Олеговна</b><br>
-                        &#8226; Инженер-исследователь. <br>
-                        &#8226; Образование: Санкт-Петербургский политехнический университет, Высшая школа юриспруденции
-                        и судебно-технической экспертизы.
-                        &#8226; • Специализируется в области хроматографических методов исследования.<br>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container text-left">
-            <div class="row">
-                <div class="col-4">
-                    <img width="150" height="150" src="{% static 'img/Фокин.jpg' %}" class="img-thumbnail"
-                         alt="">
-                </div>
-                <div class="col-8 card-text text-justify">
-                    <p>
-                        &#128269;<b>Фокин Валерий Валерьевич</b><br>
-                        &#8226; web-разработчик<br>
-                        &#8226; Образование: Государственный университет морского и речного флота имени адмирала
-                        Макарова.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-
-        {% if user.is_staff %}
-            <div class="container text-left ">
-            <div class="row">
-                <div class="col-4">
-                    <img width="150" height="150" src="{% static 'img/я.jpg' %}" class="img-thumbnail"
-                         alt="">
-                </div>
-                <div class="col-8 card-text text-justify">
-                    <p>
-                        &#10031;<b>Валерка</b><br>
-                        &#8226; Брат жены эксперта<br>
-
-
-                    </p>
-                </div>
-
-            </div>
-            </div>
-        {% endif %}
     </div>
 {% endblock %}
