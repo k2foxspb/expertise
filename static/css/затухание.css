@@ -1,0 +1,11 @@
+body {
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+    background: #FFF;
+}
+body.on {
+    transform: translateX(0);
+}
+body.off {
+    transform: translateX(100%);
+}

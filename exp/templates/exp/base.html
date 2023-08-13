@@ -14,7 +14,7 @@
     {% endblock description %}
 {% include 'includes/Head.html' %}
 </head>
-<body id="bg-24">
+<body >
 
 {% block messages %}
     {% include 'includes/messages.html' %}
@@ -40,6 +40,7 @@
 <script src="{% static 'js/Chart.min.js' %}"></script>
 <script src="{% static 'js/fontawesome.all.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/затухание.js' %}"></script>
 {% block js %}
     {% include 'includes/Body.html' %}
 {% endblock js %}
