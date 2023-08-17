@@ -31,7 +31,7 @@ class Services(models.Model):
         return reverse("services:services_detail", kwargs={"slug": self.slug})
 
     def __str__(self) -> str:
-        return f"{self.pk} {self.title}"
+        return f"{self.title}"
 
     def delete(self, *args):
         self.deleted = True
@@ -49,3 +49,4 @@ class Services(models.Model):
         verbose_name = "Услуга"
         verbose_name_plural = "Услуги"
         ordering = ("created",)
+        indexes = [models.Index(fields=['created', 'deleted'])]
