@@ -16,14 +16,14 @@
         {% for list in object_list %}
         <div class="card mb-3 color" style="max-width: 1800px">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     {% if list.image %}
                     <img src="{{list.image.url}}" class="img-thumbnail img-fluid rounded-start" alt="{{ item.title }}"
                          style="max-height:250px">
                     {% endif %}
                 </div>
-                   <div class="card-link cole3 col-5">
-                    <div class="col-md-8">
+                   <div class="card-link cole3 col-9">
+
                         <div class="card-body">
                             {% autoescape off %}
                             <h3 class="card-title cole3">{{ list.title }}</h3>
@@ -54,7 +54,7 @@
                                 {% endif %}
                             </div>
                         </div>
-                    </div>
+
                    </div>
             </div>
         </div>
