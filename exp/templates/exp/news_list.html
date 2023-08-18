@@ -22,7 +22,7 @@
                          style="max-height:250px">
                     {% endif %}
                 </div>
-                   class="card-link cole3 col-5">
+                   <div class="card-link cole3 col-5">
                     <div class="col-md-8">
                         <div class="card-body">
                             {% autoescape off %}
@@ -32,8 +32,8 @@
 
                             <p class="card-text cole3"><small class="text-muted cole3">{{ item.updated }}</small></p>
                             <p class="card-text cole3">{{ list.body|slice:":200" }}</p>
+                            {% endautoescape %}
                             <div class="col-12">
-                                {% endautoescape %}
 
                                 <a href="{% url 'exp:news_detail'  slug=list.slug %}"
                                    class="card-link cole3 col-5">Подробнее</a>
@@ -55,6 +55,7 @@
                             </div>
                         </div>
                     </div>
+                   </div>
             </div>
         </div>
         {% endfor %}
