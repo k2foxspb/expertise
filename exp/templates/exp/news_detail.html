@@ -1,28 +1,31 @@
 {% extends 'exp/base.html' %}
 {% block description %}
-        {{ object.preamble }}
+{{ object.preamble }}
 {% endblock description %}
 {% block keywords %}
-    {{ object.keyword }}
+{{ object.keyword }}
 {% endblock keywords %}
 {% block title %}
-    {{ object.title|default:"Новости" }}
+{{ object.title|default:"Новости" }}
 {% endblock title %}
 
 {% block content %}
-    <div class="row justify-content-center pt-3 ">
-        <div class="col-md-12 col-lg-8 ">
-            <div class="card shadow color">
-                <div class="card-body">
-                    <h5 class="card-title cole3">{{ object.title }}</h5>
-                    <p class="card-text cole3 text-justify">
-                        {% autoescape off %}
-                        {{ object.body }}
-                        {% endautoescape %}
-                    </p>
-                    <a href="{% url 'exp:news' %}" class="btn btn-primary">Назад</a>
-                </div>
+<div class="row justify-content-center pt-3 ">
+
+    <div class="col-md-12 col-lg-8">
+        <div class="card shadow color">
+            <div class="card-body">
+                {% autoescape off %}
+                <h3 class="card-title cole3">{{ object.title }}</h3>
+                <h6 class="card-title cole3">{{ object.created }}</h6>
+                <h5 class="card-title cole3">{{ object.preamble }}</h5>
+                <p class="card-text cole3 text-justify">
+                    {{ object.body }}
+                </p>
+                {% endautoescape %}
+                <a href="{% url 'exp:news' %}" class="btn btn-primary">Назад</a>
             </div>
         </div>
     </div>
+</div>
 {% endblock content %}
