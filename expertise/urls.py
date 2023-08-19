@@ -34,6 +34,7 @@ urlpatterns = [
     path('expertise/', include('exp.urls', namespace='exp')),
     path("authapp/", include("authapp.urls", namespace="authapp")),
     path("__debug__/", include("debug_toolbar.urls")),
+    path('comments/', include('django_comments.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

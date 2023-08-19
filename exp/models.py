@@ -1,10 +1,7 @@
 from pathlib import Path
 from time import time
-
 from django.db import models
-
 from django.urls import reverse
-
 from exp.services.utils import unique_slugify
 
 
