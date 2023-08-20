@@ -19,6 +19,7 @@
                         <h3 class="card-title cole3">{{ object.title }}</h3>
                         <h6 class="card-title cole3">{{ object.created }}</h6>
                         <h5 class="card-title cole3">{{ object.preamble }}</h5>
+                        <div style="text-align: center;">
                         {% if object.image %}
                             <img src="{{ object.image.url }}" class="img-thumbnail img-fluid rounded-start"
                                  alt="{{ object.title }}"
@@ -39,6 +40,7 @@
                                  alt="{{ object.title }}"
                                  style="max-height:250px">
                         {% endif %}
+                        </div>
                         <p class="card-text cole3 text-justify">
                             {{ object.body }}
                         </p>
