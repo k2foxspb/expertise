@@ -1,31 +1,51 @@
 {% extends 'exp/base.html' %}
 {% block description %}
-{{ object.preamble }}
+    {{ object.preamble }}
 {% endblock description %}
 {% block keywords %}
-{{ object.keyword }}
+    {{ object.keyword }}
 {% endblock keywords %}
 {% block title %}
-{{ object.title|default:"Новости" }}
+    {{ object.title|default:"Новости" }}
 {% endblock title %}
 
 {% block content %}
-<div class="row justify-content-center pt-3 ">
+    <div class="row justify-content-center pt-3 ">
 
-    <div class="col-md-12 col-lg-8">
-        <div class="card shadow color">
-            <div class="card-body">
-                {% autoescape off %}
-                <h3 class="card-title cole3">{{ object.title }}</h3>
-                <h6 class="card-title cole3">{{ object.created }}</h6>
-                <h5 class="card-title cole3">{{ object.preamble }}</h5>
-                <p class="card-text cole3 text-justify">
-                    {{ object.body }}
-                </p>
-                {% endautoescape %}
-                <a href="{% url 'exp:news' %}" class="btn btn-primary">Назад</a>
+        <div class="col-md-12 col-lg-8">
+            <div class="card shadow color">
+                <div class="card-body">
+                    {% autoescape off %}
+                        <h3 class="card-title cole3">{{ object.title }}</h3>
+                        <h6 class="card-title cole3">{{ object.created }}</h6>
+                        <h5 class="card-title cole3">{{ object.preamble }}</h5>
+                        {% if object.image %}
+                            <img src="{{ object.image.url }}" class="img-thumbnail img-fluid rounded-start"
+                                 alt="{{ object.title }}"
+                                 style="max-height:250px">
+                        {% endif %}
+                        {% if object.image %}
+                            <img src="{{ object.image1.url }}" class="img-thumbnail img-fluid rounded-start"
+                                 alt="{{ object.title }}"
+                                 style="max-height:250px">
+                        {% endif %}
+                        {% if object.image2 %}
+                            <img src="{{ object.image2.url }}" class="img-thumbnail img-fluid rounded-start"
+                                 alt="{{ object.title }}"
+                                 style="max-height:250px">
+                        {% endif %}
+                        {% if object.image3 %}
+                            <img src="{{ object.image3.url }}" class="img-thumbnail img-fluid rounded-start"
+                                 alt="{{ object.title }}"
+                                 style="max-height:250px">
+                        {% endif %}
+                        <p class="card-text cole3 text-justify">
+                            {{ object.body }}
+                        </p>
+                    {% endautoescape %}
+                    <a href="{% url 'exp:news' %}" class="btn btn-primary">Назад</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock content %}
