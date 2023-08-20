@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = host
 
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'services.apps.ServicesConfig',
     'debug_toolbar',
     "django.contrib.sites",  # новые
-    "django.contrib.sitemaps"
+    "django.contrib.sitemaps",
 ]
 
 MIDDLEWARE = [
