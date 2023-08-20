@@ -25,6 +25,9 @@ class News(models.Model):
     deleted = models.BooleanField(default=False, verbose_name='Пометить как удалённую')
     slug = models.CharField(verbose_name='URL-адрес', max_length=255, blank=True, unique=True, editable=False)
     image = models.ImageField(upload_to=news_image_path, null=True, blank=True, verbose_name='Иконка')
+    image1 = models.ImageField(upload_to=news_image_path, blank=True)
+    image2 = models.ImageField(upload_to=news_image_path, blank=True)
+    image3 = models.ImageField(upload_to=news_image_path, blank=True)
     keyword = models.CharField(max_length=255, blank=True, verbose_name='ключевые слова')
 
     def get_absolute_url(self):
