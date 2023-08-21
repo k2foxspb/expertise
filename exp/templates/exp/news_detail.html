@@ -49,9 +49,9 @@
                 <a href="{% url 'exp:news' %}" class="btn btn-primary">Назад</a>
             </div>
         </div>
+        {% get_comment_count for object as comment_count %}
+        <p>количество комментариев: {{ comment_count }} </p>
     </div>
-    {% get_comment_count for object as comment_count %}
-    <p>количество комментариев: {{ comment_count }} </p>
 </div>
 <div>
 
@@ -69,11 +69,12 @@
 {% if user.is_authenticated %}
 {% get_comment_form for object as form %}
 <form action="{% comment_form_target %}" method="POST">
-    {% csrf_token %}
+
     <div class="container">
         <div class="form-group">
             <div class="form-group">{{ form.comment }}</div>
         </div>
+        {% csrf_token %}
         {{ form.honeypot }}
         {{ form.content_type }}
         {{ form.object_pk }}
