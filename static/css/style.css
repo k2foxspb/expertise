@@ -139,6 +139,12 @@
 }
 
 .comments {
-    margin:50px;
+    border-radius:20px;
+    margin: 10px;
 
 }
+
+.del-update {
+    text-align: right;
+}
+

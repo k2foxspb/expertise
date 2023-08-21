@@ -33,26 +33,13 @@
                             <p class="card-text cole3"><small class="text-muted cole3">{{ item.updated }}</small></p>
                             <p class="card-text cole3">{{ list.body|slice:":200" }}</p>
                             {% endautoescape %}
-                            <div class="col-12">
+
 
                                 <a href="{% url 'exp:news_detail'  slug=list.slug %}"
                                    class="card-link cole3 col-5 stretched-link"></a>
 
-                                {% if perms.exp.change_news %}
 
-                                <a href="{% url 'exp:news_update'  slug=list.slug %}">
-                                    <i class="card-link cole3 col-5">редактировать</i>
-                                </a>
 
-                                {% endif %}
-                                {% if perms.exp.delete_news %}
-
-                                <a href="{% url 'exp:news_delete'  slug=list.slug %}">
-                                    <i class="card-link cole3 col-5">удалить</i>
-                                </a>
-
-                                {% endif %}
-                            </div>
                         </div>
 
                    </div>
