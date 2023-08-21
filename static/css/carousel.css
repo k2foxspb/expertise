@@ -1,5 +1,5 @@
 .carousel-3d {
-    padding: 20px;
+    padding: 2px;
     -webkit-perspective: 500px;
     perspective: 500px;
     display: flex;
@@ -44,17 +44,17 @@
 .carousel-3d nav {
     display: flex;
     justify-content: center;
-    margin: 5px 0 0;
+    margin: 0px 0 0;
 }
 
 .carousel-3d nav button {
     flex: 0 0 auto;
-    margin: 5px 5px;
+    margin: 20px 10px;
     cursor: pointer;
     color: #49ff00;
     background: #11574A;
     border: 1px solid #11574A;
-    padding: 5px 10px;
+    padding: 5px 100px;
     font-weight: bold;
     transition: all .3s ease;
 }
