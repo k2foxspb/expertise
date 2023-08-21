@@ -10,8 +10,12 @@
     судебная экспертиза новости, новости экспертизы
 {% endblock keywords %}
 {% block content %}
-    <div class="container-md">
 
+    <div class="container-md">
+        {% if perms.exp.add_news %}
+            <a class="btn btn-primary btn-block" role="button"
+               href="{% url 'exp:news_create' %}">Добавить новость</a>
+        {% endif %}
         <div class="row" style="margin-top:20px">
             {% for list in object_list %}
                 <div class="card mb-3 color" style="max-width: 1800px">
@@ -35,11 +39,12 @@
                                 </p>
                                 <p class="card-text cole3">{{ list.body|slice:":200" }}</p>
                             {% endautoescape %}
+                            <div class="col-12">
 
+                                <a href="{% url 'exp:news_detail'  slug=list.slug %}"
+                                   class="card-link cole3 col-5 stretched-link"></a>
 
-                            <a href="{% url 'exp:news_detail'  slug=list.slug %}"
-                               class="card-link cole3 col-5 stretched-link"></a>
-
+                            </div>
 
                         </div>
                     </div>
@@ -73,14 +78,11 @@
                 <!--                </div>-->
                 <!--            </div>-->
 
-                {% if perms.exp.add_news %}
-                    <a class="btn btn-primary btn-block" role="button"
-                       href="{% url 'exp:news_create' %}">Добавить новость</a>
-                {% endif %}
 
             </div>
 
             </div>
+
 
             <div class="row justify-content-center align-items-center mt-3 mb-n3 ">
                 <nav aria-label="Page navigation example">
