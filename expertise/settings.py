@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     "django.contrib.sites",  # новые
     "django.contrib.sitemaps",
+    'django_comments'
 ]
 
 MIDDLEWARE = [
