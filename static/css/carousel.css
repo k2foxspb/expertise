@@ -20,6 +20,7 @@
     transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
     transition: transform 0.5s, -webkit-transform 0.5s;
+    max-width: 400px
 }
 
 .carousel-3d figure img,
@@ -43,12 +44,12 @@
 .carousel-3d nav {
     display: flex;
     justify-content: center;
-    margin: 20px 0 0;
+    margin: 5px 0 0;
 }
 
 .carousel-3d nav button {
     flex: 0 0 auto;
-    margin: 0 5px;
+    margin: 5px 5px;
     cursor: pointer;
     color: #49ff00;
     background: #11574A;
