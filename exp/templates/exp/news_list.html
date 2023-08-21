@@ -1,110 +1,110 @@
 {% extends 'exp/base.html' %}
 
 {% block title %}
-Новости
+    Новости
 {% endblock title %}
 {% block description %}
-Новости нашей фирмы
+    Новости нашей фирмы
 {% endblock description %}
 {% block keywords %}
-судебная экспертиза новости, новости экспертизы
+    судебная экспертиза новости, новости экспертизы
 {% endblock keywords %}
 {% block content %}
-<div class="container-md">
+    <div class="container-md">
 
-    <div class="row" style="margin-top:20px">
-        {% for list in object_list %}
-        <div class="card mb-3 color" style="max-width: 1800px">
-            <div class="row g-0">
-                <div class="col-md-3">
-                    {% if list.image %}
-                    <img src="{{list.image.url}}" class="img-thumbnail img-fluid rounded-start" alt="{{ item.title }}"
-                         style="max-height:250px">
-                    {% endif %}
-                </div>
-                   <div class="card-link cole3 col-9">
+        <div class="row" style="margin-top:20px">
+            {% for list in object_list %}
+                <div class="card mb-3 color" style="max-width: 1800px">
+                <div class="row g-0">
+                    <div class="col-md-3">
+                        {% if list.image %}
+                            <img src="{{ list.image.url }}" class="img-thumbnail img-fluid rounded-start"
+                                 alt="{{ item.title }}"
+                                 style="max-height:250px">
+                        {% endif %}
+                    </div>
+                    <div class="card-link cole3 col-9">
 
                         <div class="card-body">
                             {% autoescape off %}
-                            <h3 class="card-title cole3">{{ list.title }}</h3>
-                            <h6 class="card-title cole3">{{ list.created }}</h6>
-                            <h5 class="card-title cole3">{{ list.preamble }}</h5>
+                                <h3 class="card-title cole3">{{ list.title }}</h3>
+                                <h6 class="card-title cole3">{{ list.created }}</h6>
+                                <h5 class="card-title cole3">{{ list.preamble }}</h5>
 
-                            <p class="card-text cole3"><small class="text-muted cole3">{{ item.updated }}</small></p>
-                            <p class="card-text cole3">{{ list.body|slice:":200" }}</p>
+                                <p class="card-text cole3"><small class="text-muted cole3">{{ item.updated }}</small>
+                                </p>
+                                <p class="card-text cole3">{{ list.body|slice:":200" }}</p>
                             {% endautoescape %}
 
 
-                                <a href="{% url 'exp:news_detail'  slug=list.slug %}"
-                                   class="card-link cole3 col-5 stretched-link"></a>
-
+                            <a href="{% url 'exp:news_detail'  slug=list.slug %}"
+                               class="card-link cole3 col-5 stretched-link"></a>
 
 
                         </div>
+                    </div>
+                </div>
+            {% endfor %}
 
-                   </div>
+            <div class="col-lg-4">
+                <!--            <div class="card my-2 sticky-top">-->
+                <!--                <div class="card-header">-->
+                <!--                    Фильтры-->
+                <!--                </div>-->
+                <!--                <div class="card-body">-->
+                <!--                    <form action="">-->
+                <!--                        <div class="input-group mb-3">-->
+                <!--                            <div class="input-group-prepend">-->
+                <!--                                <span class="input-group-text" id="basic-addon1">Дата от...</span>-->
+                <!--                            </div>-->
+                <!--                            <input type="date" class="form-control" name="dateFrom">-->
+                <!--                        </div>-->
+                <!--                        <div class="input-group mb-3">-->
+                <!--                            <div class="input-group-prepend">-->
+                <!--                                <span class="input-group-text" id="basic-addon1">Дата до...</span>-->
+                <!--                            </div>-->
+                <!--                            <input type="date" class="form-control" name="dateTo">-->
+                <!--                        </div>-->
+
+                <!--                        <button type="submit"-->
+                <!--                                class="btn btn-primary btn-block">Фильтровать-->
+                <!--                        </button>-->
+                <!--                    </form>-->
+                <!--                </div>-->
+                <!--            </div>-->
+
+                {% if perms.exp.add_news %}
+                    <a class="btn btn-primary btn-block" role="button"
+                       href="{% url 'exp:news_create' %}">Добавить новость</a>
+                {% endif %}
+
+            </div>
+
+            </div>
+
+            <div class="row justify-content-center align-items-center mt-3 mb-n3 ">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination ">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item"><a class="page-link"
+                                                     href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+                            </li>
+                        {% endif %}
+
+                        {% for item in page_obj.paginator.page_range %}
+                            <li class="page-item
+        {% if item == page_obj.number %}active{% endif %}">
+                                <a class="page-link" href="?page={{ item }}">{{ item }}</a>
+                            </li>
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link"
+                                                     href="?page={{ page_obj.next_page_number }}">Следующая</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
             </div>
         </div>
-        {% endfor %}
-
-        <div class="col-lg-4">
-            <!--            <div class="card my-2 sticky-top">-->
-            <!--                <div class="card-header">-->
-            <!--                    Фильтры-->
-            <!--                </div>-->
-            <!--                <div class="card-body">-->
-            <!--                    <form action="">-->
-            <!--                        <div class="input-group mb-3">-->
-            <!--                            <div class="input-group-prepend">-->
-            <!--                                <span class="input-group-text" id="basic-addon1">Дата от...</span>-->
-            <!--                            </div>-->
-            <!--                            <input type="date" class="form-control" name="dateFrom">-->
-            <!--                        </div>-->
-            <!--                        <div class="input-group mb-3">-->
-            <!--                            <div class="input-group-prepend">-->
-            <!--                                <span class="input-group-text" id="basic-addon1">Дата до...</span>-->
-            <!--                            </div>-->
-            <!--                            <input type="date" class="form-control" name="dateTo">-->
-            <!--                        </div>-->
-
-            <!--                        <button type="submit"-->
-            <!--                                class="btn btn-primary btn-block">Фильтровать-->
-            <!--                        </button>-->
-            <!--                    </form>-->
-            <!--                </div>-->
-            <!--            </div>-->
-
-            {% if perms.exp.add_news %}
-            <a class="btn btn-primary btn-block" role="button"
-               href="{% url 'exp:news_create' %}">Добавить новость</a>
-            {% endif %}
-
-        </div>
-
-    </div>
-
-    <div class="row justify-content-center align-items-center mt-3 mb-n3 ">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination ">
-                {% if page_obj.has_previous %}
-                <li class="page-item"><a class="page-link"
-                                         href="?page={{ page_obj.previous_page_number }}">Предыдущая</a></li>
-                {% endif %}
-
-                {% for item in page_obj.paginator.page_range %}
-                <li class="page-item
-        {% if item == page_obj.number %}active{% endif %}">
-                    <a class="page-link" href="?page={{ item }}">{{ item }}</a>
-                </li>
-                {% endfor %}
-
-                {% if page_obj.has_next %}
-                <li class="page-item"><a class="page-link"
-                                         href="?page={{ page_obj.next_page_number }}">Следующая</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-    </div>
-</div>
 
 {% endblock content %}
