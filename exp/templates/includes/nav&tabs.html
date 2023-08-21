@@ -15,10 +15,11 @@
         <li><a class="nav-link admin" href="{% url 'admin:index' %}">Панель
             администратора</a>
         </li>
-    {% else %}
-        <li><a class="nav-link cole3" href="{% url 'authapp:login' %}">Вход</a></li>
     {% endif %}
     {% if user.is_authenticated %}
         <li><a class="nav-link admin" href="{% url 'authapp:logout' %}">Выход</a></li>
+    {% else %}
+        <li><a class="nav-link cole3" href="{% url 'authapp:login' %}">Вход</a></li>
+
     {% endif %}
 </ul>
