@@ -12,9 +12,9 @@
 {% block content %}
     <div class="container-md">
 
-        <div class="row" style="margin-top:20px">
+        <div class="row" style="margin-top:20px;">
             {% if perms.exp.add_news %}
-                <a class="btn btn-primary btn-block" role="button"
+                <a class="btn btn-primary btn-block" style="margin-bottom:20px" role="button"
                    href="{% url 'exp:news_create' %}">Добавить новость</a>
             {% endif %}
             {% for list in object_list %}
