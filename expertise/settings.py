@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+import logging
 
 from product import key, db, user_name, passwd, host, name_mail, pass_mail
 
@@ -45,7 +46,9 @@ INSTALLED_APPS = [
     'debug_toolbar',
     "django.contrib.sites",  # новые
     "django.contrib.sitemaps",
-    'django_comments'
+    'django_comments',
+    'robots',
+
 ]
 
 MIDDLEWARE = [

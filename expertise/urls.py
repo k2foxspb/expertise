@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
+
 from .sitemaps import NewsSitemap, ServicesSitemap, StaticViewSitemap
 
 sitemaps = {
@@ -35,6 +36,7 @@ urlpatterns = [
     path("authapp/", include("authapp.urls", namespace="authapp")),
     path("__debug__/", include("debug_toolbar.urls")),
     path('comments/', include('django_comments.urls')),
+    path('robots.txt', include('robots.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
