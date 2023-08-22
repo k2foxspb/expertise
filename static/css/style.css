@@ -151,3 +151,9 @@
 .margin-news {
     margin: 30px;
 }
+
+.margin-left {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
