@@ -181,3 +181,8 @@ INTERNAL_IPS = [
 
 ADMINS = [('Валерий', 'k2foxspb@mail.ru'), ('Систер', 'sudexpert2023@mail.ru')]
 SERVER_EMAIL = 'sudexpert2023@mail.ru'
+
+
+ROBOTS_SITEMAP_URLS = [
+    'https://sudexpert.site/sitemap.xml',
+]
