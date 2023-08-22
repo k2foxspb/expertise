@@ -23,7 +23,7 @@
                         <div class="col-md-3">
                             {% if list.image %}
                                 <img src="{{ list.image.url }}" class="img-thumbnail img-fluid rounded-start"
-                                     alt="{{ item.title }}"
+                                     alt="{{ list.title }}"
                                      style="max-height:250px">
                             {% endif %}
                         </div>
@@ -36,7 +36,7 @@
                                     <h5 class="card-title cole3">{{ list.preamble }}</h5>
 
                                     <p class="card-text cole3"><small
-                                            class="text-muted cole3">{{ item.updated }}</small>
+                                            class="text-muted cole3">{{ list.updated }}</small>
                                     </p>
                                     <p class="card-text cole3">{{ list.body|slice:":200" }}</p>
                                 {% endautoescape %}
