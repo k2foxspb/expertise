@@ -19,7 +19,7 @@
             {% endif %}
             {% for list in object_list %}
                 <div class="card mb-3 color " style="max-width: 1800px">
-                    <div class="row g-0 margin-news">
+                    <div class="row g-0">
                         <div class="col-md-3">
                             {% if list.image %}
                                 <img src="{{ list.image.url }}" class="img-thumbnail img-fluid rounded-start"
@@ -34,14 +34,14 @@
                                     <h3 class="card-title cole3 text-justify centerr">{{ list.title }}</h3>
 
                                     <h5 class="card-title cole3 text-justify centerr">{{ list.preamble }}</h5>
-                                    <p class="card-text cole3 centerr">{{ list.body|truncatewords:20|linebreaks }}</p>
+                                    <p class="cole3 centerr">{{ list.body|truncatewords:20|linebreaks }}</p>
                                 {% endautoescape %}
-                                {% if user.is_superuser and list.updated != list.created%}
-                                    <p class="card-text cole3 del-update"><small
+                                {% if user.is_superuser and list.updated != list.created %}
+                                    <p class="cole3 del-update"><small
                                             class="text-muted cole3 del-update">Обновлено {{ list.updated }}</small>
                                     </p>
                                 {% endif %}
-                                <h6 class="card-text cole3 del-update">{{ list.created }}</h6>
+                                <h6 class="cole3 del-update">{{ list.created }}</h6>
                                 <div class="col-12">
                                     <a href="{% url 'exp:news_detail'  slug=list.slug %}"
                                        class="card-link cole3 col-5 stretched-link"></a>

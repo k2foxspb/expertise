@@ -16,11 +16,12 @@
     <div class="col-md-12 col-lg-8">
         <div class="card shadow color">
             <div class="card-body">
+                <div style="text-align: center;">
                 {% autoescape off %}
                 <h3 class="card-title cole3">{{ object.title }}</h3>
                 <h6 class="card-title cole3">{{ object.created }}</h6>
                 <h5 class="card-title cole3">{{ object.preamble }}</h5>
-                <div style="text-align: center;">
+
                     {% if object.image %}
                     <img src="{{ object.image.url }}" class="img-thumbnail img-fluid rounded-start"
                          alt="{{ object.title }}"
