@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -174,3 +175,6 @@ SITE_ID = 1
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+ADMINS = [('Валерий', 'k2foxspb@mail.ru'), ('Систер', 'sudexpert2023@mail.ru')]
+SERVER_EMAIL = 'sudexpert2023@mail.ru'
