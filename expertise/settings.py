@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     'django_comments',
     'robots',
+    'data.apps.DataConfig',
 
 ]
 
