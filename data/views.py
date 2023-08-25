@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
@@ -15,21 +15,30 @@ class DataView(PermissionRequiredMixin, ListView):
     permission_required = ("data.add_data",)
     permission_denied_message = 'неть'
 
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted=False)
 
-def create(request):
-    if request.method == "POST":
-        data = Data()
-        data.A = request.POST.get("A")
-        data.B = request.POST.get("B")
-        data.C = request.POST.get("C")
-        data.D = request.POST.get("D")
-        data.E = request.POST.get("E")
-        data.F = request.POST.get("F")
-        data.H = request.POST.get("H")
-        data.I = request.POST.get("I")
-        data.J = request.POST.get("J")
-        data.K = request.POST.get("K")
-        data.L = request.POST.get("L")
 
-        data.save()
-    return HttpResponseRedirect("/data")
+class DataCreateView(PermissionRequiredMixin, CreateView):
+    model = Data
+    fields = '__all__'
+    success_url = reverse_lazy("data:data")
+    permission_required = ("data.add_data",)
+    template_name = 'data.html'
+
+
+class DataUpdateView(PermissionRequiredMixin, UpdateView):
+    model = Data
+    fields = '__all__'
+    success_url = reverse_lazy("data:data")
+    permission_required = ("data.change_data",)
+    template_name = 'data_form.html'
+
+
+class DataDeleteView(PermissionRequiredMixin, DeleteView):
+    model = Data
+    success_url = reverse_lazy("data:data")
+    permission_required = ("data.delete_data",)
+    template_name = 'data_confirm_delete.html'
+
+

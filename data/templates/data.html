@@ -15,67 +15,69 @@
                     <br>
 
                     <table class="table table-striped">
-                          <form method="POST" action="create/">
-                              {% csrf_token %}
-                        <tr>
-                            <th>№ </th>
-                            <th>A<br><label>
-                                <input type="text" name="A"/>
-                            </label></th>
-                            <th>B<br> <label>
-                                <input type="text" name="B"/>
-                            </label></th>
-                            <th>C<br> <label>
-                                <input type="text" name="C"/>
-                            </label></th>
-                            <th>D<br> <label>
-                                <input type="text" name="D"/>
-                            </label></th>
-                            <th>E<br> <label>
-                                <input type="text" name="E"/>
-                            </label></th>
-                            <th>F<br> <label>
-                                <input type="text" name="F"/>
-                            </label></th>
-                            <th>H<br> <label>
-                                <input type="text" name="H"/>
-                            </label></th>
-                            <th>I<br> <label>
-                                <input type="text" name="I"/>
-                            </label></th>
-                            <th>J<br> <label>
-                                <input type="text" name="J"/>
-                            </label></th>
-                            <th>K<br> <label>
-                                <input type="text" name="K"/>
-                            </label></th>
-                            <th>L<br> <label>
-                                <input type="text" name="L"/>
-                            </label><br></th>
+                        <form method="POST" action="create/">
+                            {% csrf_token %}
+                            <tr>
+                                <th>№</th>
+                                <th>Создано</th>
+                                <th>A<br><label>
+                                    <input type="text" name="A"/>
+                                </label></th>
+                                <th>B<br> <label>
+                                    <input type="text" name="B"/>
+                                </label></th>
+                                <th>C<br> <label>
+                                    <input type="text" name="C"/>
+                                </label></th>
+                                <th>D<br> <label>
+                                    <input type="text" name="D"/>
+                                </label></th>
+                                <th>E<br> <label>
+                                    <input type="text" name="E"/>
+                                </label></th>
+                                <th>F<br> <label>
+                                    <input type="text" name="F"/>
+                                </label></th>
+                                <th>H<br> <label>
+                                    <input type="text" name="H"/>
+                                </label></th>
+                                <th>I<br> <label>
+                                    <input type="text" name="I"/>
+                                </label></th>
+                                <th>J<br> <label>
+                                    <input type="text" name="J"/>
+                                </label></th>
+                                <th>K<br> <label>
+                                    <input type="text" name="K"/>
+                                </label></th>
+                                <th>L<br> <label>
+                                    <input type="text" name="L"/>
+                                </label><br></th>
 
-                            <input type="submit" value="Сохранить">
-                        </tr>
-
-
-
+                                <input type="submit" value="Сохранить">
+                            </tr>
 
 
                         </form>
+
                         {% for x in object_list %}
-
-
-                            <td>{{ x.pk }}</td>
-                            <td>{{ x.A }}</td>
-                            <td>{{ x.B }}</td>
-                            <td>{{ x.C }}</td>
-                            <td>{{ x.D }}</td>
-                            <td>{{ x.E }}</td>
-                            <td>{{ x.F }}</td>
-                            <td>{{ x.H }}</td>
-                            <td>{{ x.I }}</td>
-                            <td>{{ x.J }}</td>
-                            <td>{{ x.K }}</td>
-                            <td>{{ x.L }}</td>
+                            <tr>
+                                <td>{{ x.pk }}</td>
+                                <td style="text-align: center">{{ x.created }}</td>
+                                <td>{{ x.A }}</td>
+                                <td>{{ x.B }}</td>
+                                <td>{{ x.C }}</td>
+                                <td>{{ x.D }}</td>
+                                <td>{{ x.E }}</td>
+                                <td>{{ x.F }}</td>
+                                <td>{{ x.H }}</td>
+                                <td>{{ x.I }}</td>
+                                <td>{{ x.J }}</td>
+                                <td>{{ x.K }}</td>
+                                <td>{{ x.L }}</td>
+                                <td><a href="{% url 'data:edit'  pk=x.pk %}">Изменить</a> | <a
+                                        href="{% url 'data:delete' pk=x.pk %}">Удалить</a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </table>
