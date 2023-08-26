@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django_comments',
     'robots',
     'data.apps.DataConfig',
+    'colorfield',
 
 ]
 

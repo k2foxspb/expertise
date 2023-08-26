@@ -60,17 +60,16 @@
                                             class="btn btn-primary  btn-block">Сохранить
                                     </button>
                                 </th>
-
-
                             </tr>
 
 
                         </form>
 
                         {% for x in object_list %}
-                            <tr class="align-middle table-primary">
+                            <tr class="align-middle" style="background-color:{{ x.color }}">
                                 <td class="table-dark">{{ x.pk }}</td>
                                 <td class="table-dark" style="text-align: center">{{ x.created }}</td>
+
                                 <td>{{ x.A }}</td>
                                 <td>{{ x.B }}</td>
                                 <td>{{ x.C }}</td>
@@ -82,6 +81,7 @@
                                 <td>{{ x.J }}</td>
                                 <td>{{ x.K }}</td>
                                 <td>{{ x.L }}</td>
+
 
                                 <td style="text-align: center"><a href="{% url 'data:edit'  pk=x.pk %}"><img
                                         style="width: 20px" src="{% static 'img/иконки/img.png' %}"/></a>&nbsp&nbsp&nbsp&nbsp&nbsp<a

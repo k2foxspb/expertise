@@ -7,7 +7,9 @@
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="centerr"><p>№ {{ object.pk }}</p>
+                    <label for=<br><h4>Выбор цвета строки</h4></label><input style="height: 40px" type="color" id={{ form.color }}<br>
                     A<br></div>
+
                 <div class="centerr">{{ form.A }}<br>B<br></div>
                 <div class="centerr">{{ form.B }}<br>C<br></div>
                 <div class="centerr">{{ form.C }}<br>D<br></div>
@@ -19,13 +21,18 @@
                 <div class="centerr">{{ form.J }}<br>K<br></div>
                 <div class="centerr">{{ form.K }}<br>L<br></div>
                 <div class="centerr">{{ form.L }}<br><br></div>
-                <div class="centerr"><button  type="submit"
-                        class="btn btn-primary btn-block">Сохранить
-                </button></div>
+
+
+
+                <div class="centerr">
+                    <button type="submit"
+                            class="btn btn-primary btn-block">Сохранить
+                    </button>
+                </div>
             </form>
         </div>
     </div>
 
-<script src="{% static 'js/color.js' %}"></script>
+    <script src="{% static 'js/color.js' %}"></script>
 {% endblock content %}
 
