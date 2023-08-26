@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Data(models.Model):
-    COLOR_PALETTE = [           # choices for color
+    COLOR_PALETTE = [             # Color field name
         ("#FFFFFF", "white",),
         ("#000000", "black",),
     ]
@@ -20,7 +20,7 @@ class Data(models.Model):
     K = models.CharField(max_length=255, blank=True, null=True)
     L = models.CharField(max_length=255, blank=True, null=True)
     deleted = models.BooleanField(default=False)
-    color = ColorField(samples=COLOR_PALETTE, null=True, blank=True)
+    color = ColorField(choices=COLOR_PALETTE, null=True, blank=True)
     created = models.DateField(auto_now_add=True, editable=False)
 
     def delete(self, *args):
