@@ -1,19 +1,31 @@
 {% extends 'data.html' %}
+{% load static %}
 {% load crispy_forms_filters %}
 {% block content %}
-<div class="row justify-content-center ">
-    <div class="col-md-12 col-lg-8 color2">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <p>№ {{ object.pk }}</p>
-            {{ form|crispy }}
-            <button type="submit"
-                    class="btn btn-primary btn-block">Опубликовать
-            </button>
-        </form>
+    <div class="row justify-content-center ">
+        <div class="col-md-12 col-lg-8 color2">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="centerr"><p>№ {{ object.pk }}</p>
+                    A<br></div>
+                <div class="centerr">{{ form.A }}<br>B<br></div>
+                <div class="centerr">{{ form.B }}<br>C<br></div>
+                <div class="centerr">{{ form.C }}<br>D<br></div>
+                <div class="centerr">{{ form.D }}<br>E<br></div>
+                <div class="centerr">{{ form.E }}<br>F<br></div>
+                <div class="centerr">{{ form.F }}<br>H<br></div>
+                <div class="centerr">{{ form.H }}<br>I<br></div>
+                <div class="centerr">{{ form.I }}<br>J<br></div>
+                <div class="centerr">{{ form.J }}<br>K<br></div>
+                <div class="centerr">{{ form.K }}<br>L<br></div>
+                <div class="centerr">{{ form.L }}<br><br></div>
+                <div class="centerr"><button  type="submit"
+                        class="btn btn-primary btn-block">Сохранить
+                </button></div>
+            </form>
+        </div>
     </div>
-</div>
 
-
+<script src="{% static 'js/color.js' %}"></script>
 {% endblock content %}
 

@@ -1,4 +1,5 @@
 {% extends 'exp/base.html' %}
+{% load static %}
 {% load crispy_forms_filters %}
 {% block navbar %}
 
@@ -14,56 +15,62 @@
                     <h3 class="h1" style="text-align: center">Таблица для экспертов</h3>
                     <br>
 
-                    <table class="table table-striped">
+                    <table class="table-sm table table-hover table-bordered">
                         <form method="POST" action="create/">
                             {% csrf_token %}
-                            <tr>
+
+                            <tr class="table-dark">
                                 <th>№</th>
                                 <th>Создано</th>
-                                <th>A<br><label>
+                                <th class="centerr">A<br><label>
                                     <input type="text" name="A"/>
                                 </label></th>
-                                <th>B<br> <label>
+                                <th class="centerr">B<br> <label>
                                     <input type="text" name="B"/>
                                 </label></th>
-                                <th>C<br> <label>
+                                <th class="centerr">C<br> <label>
                                     <input type="text" name="C"/>
                                 </label></th>
-                                <th>D<br> <label>
+                                <th class="centerr">D<br> <label>
                                     <input type="text" name="D"/>
                                 </label></th>
-                                <th>E<br> <label>
+                                <th class="centerr">E<br> <label>
                                     <input type="text" name="E"/>
                                 </label></th>
-                                <th>F<br> <label>
+                                <th class="centerr">F<br> <label>
                                     <input type="text" name="F"/>
                                 </label></th>
-                                <th>H<br> <label>
+                                <th class="centerr">H<br> <label>
                                     <input type="text" name="H"/>
                                 </label></th>
-                                <th>I<br> <label>
+                                <th class="centerr">I<br> <label>
                                     <input type="text" name="I"/>
                                 </label></th>
-                                <th>J<br> <label>
+                                <th class="centerr">J<br> <label>
                                     <input type="text" name="J"/>
                                 </label></th>
-                                <th>K<br> <label>
+                                <th class="centerr">K<br> <label>
                                     <input type="text" name="K"/>
                                 </label></th>
-                                <th>L<br> <label>
+                                <th class="centerr">L<br> <label>
                                     <input type="text" name="L"/>
                                 </label><br></th>
+                                <th class="align-middle">
+                                    <button type="submit"
+                                            class="btn btn-primary  btn-block">Сохранить
+                                    </button>
+                                </th>
 
-                                <input type="submit" value="Сохранить">
+
                             </tr>
 
 
                         </form>
 
                         {% for x in object_list %}
-                            <tr>
-                                <td>{{ x.pk }}</td>
-                                <td style="text-align: center">{{ x.created }}</td>
+                            <tr class="align-middle table-primary">
+                                <td class="table-dark">{{ x.pk }}</td>
+                                <td class="table-dark" style="text-align: center">{{ x.created }}</td>
                                 <td>{{ x.A }}</td>
                                 <td>{{ x.B }}</td>
                                 <td>{{ x.C }}</td>
@@ -75,8 +82,11 @@
                                 <td>{{ x.J }}</td>
                                 <td>{{ x.K }}</td>
                                 <td>{{ x.L }}</td>
-                                <td><a href="{% url 'data:edit'  pk=x.pk %}">Изменить</a> | <a
-                                        href="{% url 'data:delete' pk=x.pk %}">Удалить</a>
+
+                                <td style="text-align: center"><a href="{% url 'data:edit'  pk=x.pk %}"><img
+                                        style="width: 20px" src="{% static 'img/иконки/img.png' %}"/></a>&nbsp&nbsp&nbsp&nbsp&nbsp<a
+                                        href="{% url 'data:delete' pk=x.pk %}"><img style="width: 20px"
+                                                                                    src="{% static 'img/иконки/img_1.png' %}"/></a>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -85,4 +95,5 @@
             </div>
         </div>
     </div>
+    <script src="{% static 'js/color.js' %}"></script>
 {% endblock %}
