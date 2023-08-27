@@ -1,9 +1,10 @@
 from colorfield.fields import ColorField
 from django.db import models
+from django_comments.moderation import moderator, CommentModerator
 
 
 class Data(models.Model):
-    COLOR_PALETTE = [             # Color field name
+    COLOR_PALETTE = [  # Color field name
         ("#FFFFFF", "white",),
         ("#000000", "black",),
     ]
@@ -19,7 +20,7 @@ class Data(models.Model):
     J = models.CharField(max_length=255, blank=True, null=True)
     K = models.CharField(max_length=255, blank=True, null=True)
     L = models.CharField(max_length=255, blank=True, null=True)
-    deleted = models.BooleanField(default=False)
+    deleted = models.BooleanField()
     color = ColorField(choices=COLOR_PALETTE, null=True, blank=True)
     created = models.DateField(auto_now_add=True, editable=False)
 
@@ -31,3 +32,11 @@ class Data(models.Model):
         verbose_name = "строка в таблице"
         verbose_name_plural = "строки в таблице"
         ordering = ("-pk",)
+
+
+class DataModerator(CommentModerator):
+    email_notification = True
+    enable_field = 'deleted'
+
+
+moderator.register(Data, DataModerator)

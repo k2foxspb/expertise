@@ -43,9 +43,4 @@ class DataDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'data_confirm_delete.html'
 
 
-class DataModerator(CommentModerator):
-    email_notification = True
-    enable_field = 'deleted'
 
-
-moderator.register(Data, DataModerator)
