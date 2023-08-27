@@ -16,7 +16,7 @@
                 <h3 class="h1" style="text-align: center">Таблица для экспертов</h3>
                 <br>
 
-                <table class="table-sm table table-hover table-bordered">
+                <table class="table-sm table table-light table-hover table-bordered">
                     <form method="POST" action="create/">
                         {% csrf_token %}
 
@@ -68,10 +68,10 @@
 
                     {% for x in object_list %}
                         <tr class="align-middle" style="background-color:{{ x.color }}">
-                            <td class="table-dark">{{ x.pk }}</td>
+                            <td class="table-dark" style="position: sticky;left: 0;">{{ x.pk }}</td>
                             <td class="table-dark" style="text-align: center">{{ x.created }}</td>
 
-                            <td>{{ x.A }}</td>
+                            <td >{{ x.A }}</td>
                             <td>{{ x.B }}</td>
                             <td>{{ x.C }}</td>
                             <td>{{ x.D }}</td>
