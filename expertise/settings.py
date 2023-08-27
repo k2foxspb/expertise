@@ -180,7 +180,7 @@ SITE_ID = 1
 
 INTERNAL_IPS = ['127.0.0.1']
 
-ADMINS = [('Валерий', 'k2foxspb@mail.ru'),]
+ADMINS = [('Валерий', 'k2foxspb@mail.ru')]
 SERVER_EMAIL = 'sudexpert'
 
 
