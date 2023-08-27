@@ -188,3 +188,14 @@ SERVER_EMAIL = 'sudexpert2023@mail.ru'
 ROBOTS_SITEMAP_URLS = [
     'https://sudexpert.site/sitemap.xml',
 ]
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
