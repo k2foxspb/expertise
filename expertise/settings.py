@@ -178,10 +178,10 @@ EMAIL_HOST_PASSWORD = pass_mail
 
 SITE_ID = 1
 
-INTERNAL_IPS = host
+INTERNAL_IPS = ['127.0.0.1']
 
-ADMINS = [('Валерий', 'k2foxspb@mail.ru'), ('Систер', 'sudexpert2023@mail.ru')]
-SERVER_EMAIL = 'k2foxspb@mail.ru'
+ADMINS = [('Валерий', 'k2foxspb@mail.ru'),]
+SERVER_EMAIL = 'sudexpert'
 
 
 ROBOTS_SITEMAP_URLS = [
