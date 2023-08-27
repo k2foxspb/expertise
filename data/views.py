@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 from data.models import Data
+from django_comments.moderation import CommentModerator, moderator
 
 
 # Create your views here.
@@ -42,3 +43,9 @@ class DataDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'data_confirm_delete.html'
 
 
+class DataModerator(CommentModerator):
+    email_notification = True
+    enable_field = 'deleted'
+
+
+moderator.register(Data, DataModerator)
