@@ -178,7 +178,7 @@ EMAIL_HOST_PASSWORD = pass_mail
 SITE_ID = 1
 
 INTERNAL_IPS = [
-    "127.0.0.1",
+    "sudexpert.site",
 ]
 
 ADMINS = [('Валерий', 'k2foxspb@mail.ru'), ('Систер', 'sudexpert2023@mail.ru')]
