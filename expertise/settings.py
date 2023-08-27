@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'robots',
     'data.apps.DataConfig',
     'colorfield',
+    'django_redis'
 
 ]
 
@@ -180,7 +181,7 @@ SITE_ID = 1
 INTERNAL_IPS = host
 
 ADMINS = [('Валерий', 'k2foxspb@mail.ru'), ('Систер', 'sudexpert2023@mail.ru')]
-SERVER_EMAIL = 'sudexpert2023@mail.ru'
+SERVER_EMAIL = 'k2foxspb@mail.ru'
 
 
 ROBOTS_SITEMAP_URLS = [
