@@ -182,7 +182,7 @@ INTERNAL_IPS = ['127.0.0.1']
 
 ADMINS = [('Валерий', 'k2foxspb@mail.ru')]
 SERVER_EMAIL = 'sudexpert'
-
+MANAGERS = ADMINS
 
 ROBOTS_SITEMAP_URLS = [
     'https://sudexpert.site/sitemap.xml',
