@@ -1,99 +1,100 @@
 {% extends 'exp/base.html' %}
 {% load static %}
 {% load crispy_forms_filters %}
-{% block navbar %}
-
-{% endblock %}
+{% block navbar %}{% endblock navbar %}
+{% block navTabs %}{% endblock navTabs %}
 {% block content %}
+
     <div class="row">
-        <div>
 
-        </div>
-        <div class="">
-            <div class="" style="width: auto;">
-                <div class="card-body">
-                    <h3 class="h1" style="text-align: center">Таблица для экспертов</h3>
-                    <br>
+        <div class="centerr" style="width: auto;">
+            <p>
+                <a href="{% url 'services:services' %}"><img src="{% static 'img/logo.png' %}" style="width: 200px"
+                                                             alt=""></a>
+            </p>
+            <div class="card-body">
+                <h3 class="h1" style="text-align: center">Таблица для экспертов</h3>
+                <br>
 
-                    <table class="table-sm table table-hover table-bordered">
-                        <form method="POST" action="create/">
-                            {% csrf_token %}
+                <table class="table-sm table table-hover table-bordered">
+                    <form method="POST" action="create/">
+                        {% csrf_token %}
 
-                            <tr class="table-dark">
-                                <th>№</th>
-                                <th>Создано</th>
-                                <th class="centerr">A<br><label>
-                                    <input type="text" name="A"/>
-                                </label></th>
-                                <th class="centerr">B<br> <label>
-                                    <input type="text" name="B"/>
-                                </label></th>
-                                <th class="centerr">C<br> <label>
-                                    <input type="text" name="C"/>
-                                </label></th>
-                                <th class="centerr">D<br> <label>
-                                    <input type="text" name="D"/>
-                                </label></th>
-                                <th class="centerr">E<br> <label>
-                                    <input type="text" name="E"/>
-                                </label></th>
-                                <th class="centerr">F<br> <label>
-                                    <input type="text" name="F"/>
-                                </label></th>
-                                <th class="centerr">H<br> <label>
-                                    <input type="text" name="H"/>
-                                </label></th>
-                                <th class="centerr">I<br> <label>
-                                    <input type="text" name="I"/>
-                                </label></th>
-                                <th class="centerr">J<br> <label>
-                                    <input type="text" name="J"/>
-                                </label></th>
-                                <th class="centerr">K<br> <label>
-                                    <input type="text" name="K"/>
-                                </label></th>
-                                <th class="centerr">L<br> <label>
-                                    <input type="text" name="L"/>
-                                </label><br></th>
-                                <th class="align-middle">
-                                    <button type="submit"
-                                            class="btn btn-primary  btn-block">Сохранить
-                                    </button>
-                                </th>
-                            </tr>
-
-
-                        </form>
-
-                        {% for x in object_list %}
-                            <tr class="align-middle" style="background-color:{{ x.color }}">
-                                <td class="table-dark">{{ x.pk }}</td>
-                                <td class="table-dark" style="text-align: center">{{ x.created }}</td>
-
-                                <td>{{ x.A }}</td>
-                                <td>{{ x.B }}</td>
-                                <td>{{ x.C }}</td>
-                                <td>{{ x.D }}</td>
-                                <td>{{ x.E }}</td>
-                                <td>{{ x.F }}</td>
-                                <td>{{ x.H }}</td>
-                                <td>{{ x.I }}</td>
-                                <td>{{ x.J }}</td>
-                                <td>{{ x.K }}</td>
-                                <td>{{ x.L }}</td>
+                        <tr class="table-dark">
+                            <th>№</th>
+                            <th>Создано</th>
+                            <th class="centerr">A<br><label>
+                                <input type="text" name="A"/>
+                            </label></th>
+                            <th class="centerr">B<br> <label>
+                                <input type="text" name="B"/>
+                            </label></th>
+                            <th class="centerr">C<br> <label>
+                                <input type="text" name="C"/>
+                            </label></th>
+                            <th class="centerr">D<br> <label>
+                                <input type="text" name="D"/>
+                            </label></th>
+                            <th class="centerr">E<br> <label>
+                                <input type="text" name="E"/>
+                            </label></th>
+                            <th class="centerr">F<br> <label>
+                                <input type="text" name="F"/>
+                            </label></th>
+                            <th class="centerr">H<br> <label>
+                                <input type="text" name="H"/>
+                            </label></th>
+                            <th class="centerr">I<br> <label>
+                                <input type="text" name="I"/>
+                            </label></th>
+                            <th class="centerr">J<br> <label>
+                                <input type="text" name="J"/>
+                            </label></th>
+                            <th class="centerr">K<br> <label>
+                                <input type="text" name="K"/>
+                            </label></th>
+                            <th class="centerr">L<br> <label>
+                                <input type="text" name="L"/>
+                            </label><br></th>
+                            <th class="align-middle">
+                                <button type="submit"
+                                        class="btn btn-primary  btn-block">Сохранить
+                                </button>
+                            </th>
+                        </tr>
 
 
-                                <td style="text-align: center"><a href="{% url 'data:edit'  pk=x.pk %}"><img
-                                        style="width: 20px" src="{% static 'img/иконки/img.png' %}"/></a>&nbsp&nbsp&nbsp&nbsp&nbsp<a
-                                        href="{% url 'data:delete' pk=x.pk %}"><img style="width: 20px"
-                                                                                    src="{% static 'img/иконки/img_1.png' %}"/></a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                </div>
+                    </form>
+
+                    {% for x in object_list %}
+                        <tr class="align-middle" style="background-color:{{ x.color }}">
+                            <td class="table-dark">{{ x.pk }}</td>
+                            <td class="table-dark" style="text-align: center">{{ x.created }}</td>
+
+                            <td>{{ x.A }}</td>
+                            <td>{{ x.B }}</td>
+                            <td>{{ x.C }}</td>
+                            <td>{{ x.D }}</td>
+                            <td>{{ x.E }}</td>
+                            <td>{{ x.F }}</td>
+                            <td>{{ x.H }}</td>
+                            <td>{{ x.I }}</td>
+                            <td>{{ x.J }}</td>
+                            <td>{{ x.K }}</td>
+                            <td>{{ x.L }}</td>
+
+
+                            <td style="text-align: center"><a href="{% url 'data:edit'  pk=x.pk %}"><img
+                                    style="width: 20px" src="{% static 'img/иконки/img.png' %}"/></a>&nbsp&nbsp&nbsp&nbsp&nbsp<a
+                                    href="{% url 'data:delete' pk=x.pk %}"><img style="width: 20px"
+                                                                                src="{% static 'img/иконки/img_1.png' %}"/></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
             </div>
         </div>
+    </div>
     </div>
     <script src="{% static 'js/color.js' %}"></script>
 {% endblock %}
