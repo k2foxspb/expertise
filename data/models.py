@@ -4,7 +4,7 @@ from django_comments.moderation import moderator, CommentModerator
 
 
 class Data(models.Model):
-    COLOR_PALETTE = [  # Color field name
+    COLOR_PALETTE = [  # Color field name 'choices'
         ("#FFFFFF", "white",),
         ("#000000", "black",),
     ]
@@ -21,7 +21,7 @@ class Data(models.Model):
     K = models.CharField(max_length=255, blank=True, null=True)
     L = models.CharField(max_length=255, blank=True, null=True)
     deleted = models.BooleanField()
-    color = ColorField(choices=COLOR_PALETTE, null=True, blank=True)
+    color = ColorField(samples=COLOR_PALETTE, null=True, blank=True)
     created = models.DateField(auto_now_add=True, editable=False)
 
     def delete(self, *args):
