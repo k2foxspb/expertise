@@ -71,7 +71,7 @@
                             <td class="table-dark" style="position: sticky;left: 0;">{{ x.pk }}</td>
                             <td class="table-dark" style="text-align: center">{{ x.created }}</td>
 
-                            <td >{{ x.A }}</td>
+                            <td>{{ x.A }}</td>
                             <td>{{ x.B }}</td>
                             <td>{{ x.C }}</td>
                             <td>{{ x.D }}</td>
@@ -84,10 +84,16 @@
                             <td>{{ x.L }}</td>
 
 
-                            <td style="text-align: center"><a href="{% url 'data:edit'  pk=x.pk %}"><img
-                                    style="width: 20px" src="{% static 'img/иконки/img.png' %}"/></a>&nbsp&nbsp&nbsp&nbsp&nbsp<a
-                                    href="{% url 'data:delete' pk=x.pk %}"><img style="width: 20px"
-                                                                                src="{% static 'img/иконки/img_1.png' %}"/></a>
+                            <td style="text-align: center">
+                                <a href="{% url 'data:edit'  pk=x.pk %}">
+                                    <img alt="корандашик" style="width: 20px"
+                                         src="{% static 'img/иконки/img.png' %}"/>
+                                </a>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp
+                                <a href="{% url 'data:delete' pk=x.pk %}">
+                                    <img alt="крестик" style="width: 20px"
+                                         src="{% static 'img/иконки/img_1.png' %}"/>
+                                </a>
                             </td>
                         </tr>
                     {% endfor %}

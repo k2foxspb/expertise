@@ -1,27 +1,23 @@
 {% load static %}
-{#<div id="vk_community_messages" class="position-sticky header"></div>#}
-{#<script type="text/javascript">#}
-{#    VK.Widgets.CommunityMessages("vk_community_messages", 216989087, {#}
-{#        expanded: "0",#}
-{#        tooltipButtonText: "Есть вопрос?"#}
-{#    });#}
-{##}
-{#</script>#}
-
-
-<!-- VK Widget -->
 
 {% block js %}
-<script>
-    $(document).ready(function () {
 
-        {% if messages %}
-            // Toasts
-            $(".toast").toast({delay: 5000});
-            $(".toast").toast("show");
-        {% endif %}
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/Chart.min.js' %}"></script>
+    <script src="{% static 'js/fontawesome.all.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/затухание.js' %}"></script>
+    <script>
+        $(document).ready(function () {
 
-    });
-</script>
+            {% if messages %}
+                // Toasts
+                $(".toast").toast({delay: 5000});
+                $(".toast").toast("show");
+            {% endif %}
+
+        });
+    </script>
 {% endblock js %}
 
