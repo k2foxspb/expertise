@@ -13,7 +13,7 @@ class DataView(PermissionRequiredMixin, ListView):
     model = Data
 
     template_name = 'data.html'
-    permission_required = ("data.add_data",)
+    permission_required = ("data.view_data",)
     permission_denied_message = 'неть'
 
     def get_queryset(self):
