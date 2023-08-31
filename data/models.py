@@ -28,6 +28,9 @@ class Data(models.Model):
         self.deleted = True
         self.save()
 
+    def __str__(self):
+        return self.A
+
     class Meta:
         verbose_name = "строка в таблице"
         verbose_name_plural = "строки в таблице"
