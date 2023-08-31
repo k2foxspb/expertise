@@ -3,7 +3,8 @@
     <li class="nav-item">
         <a class="nav-link cole3" href="{% url 'exp:news' %}">Новости</a>
     </li>
-    <a class="nav-link cole3" href="{% url 'exp:about' %}">Контакты</a>
+    <li>
+        <a class="nav-link cole3" href="{% url 'exp:about' %}">Контакты</a>
     </li>
     <li class="nav-item">
         <a class="nav-link cole3" href="{% url 'exp:employ' %}">Наши сотрудники</a>
@@ -11,19 +12,31 @@
     <li class="nav-item">
         <a class="nav-link active cole3" aria-current="page" href="{% url 'exp:aboutWork' %}">О нас</a>
     </li>
-    {% if user.is_staff %}
-        <li><a class="nav-link admin" href="{% url 'admin:index' %}">Панель
-            администратора</a>
-        </li>
-    {% endif %}
-    {% if perms.data.view_data %}
-        <li><a class="nav-link admin" href="{% url 'data:data' %}">Exel</a>
-        </li>
-    {% endif %}
+
+
     {% if user.is_authenticated %}
-        <li><a class="nav-link admin" href="{% url 'authapp:logout' %}">Выход</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+                {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if user.is_superuser %}
+                    <li><a class="nav-link admin" href="{% url 'admin:index' %}">Панель
+                        администратора</a>
+                    </li>
+                {% endif %}
+                {% if perms.data.view_data %}
+                    <li>
+                        <a class="nav-link admin" href="{% url 'data:data' %}">Exel</a>
+                    </li>
+                {% endif %}
+                <li><a class="nav-link admin" href="{% url 'authapp:logout' %}">Выход</a></li>
+
+            </ul>
+        </li>
     {% else %}
         <li><a class="nav-link cole3" href="{% url 'authapp:login' %}">Вход</a></li>
-
     {% endif %}
 </ul>
+
