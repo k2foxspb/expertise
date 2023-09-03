@@ -34,7 +34,8 @@ class CustomUserCreationForm(UserCreationForm):
 
     def send_email(self):
         send_feedback_email_task.delay(
-            self.cleaned_data["username"],
+            self.cleaned_data["username", "email"],
+
         )
 
 
