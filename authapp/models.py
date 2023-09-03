@@ -7,6 +7,7 @@ from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.core.mail import send_mail
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from email_signals.models import EmailSignalMixin
 
 
 def users_avatars_path(instance, filename):
@@ -17,7 +18,7 @@ def users_avatars_path(instance, filename):
     return f'user_{instance.username}/avatars/pic_{num}{suff}'
 
 
-class CustomUser(AbstractBaseUser, PermissionsMixin):
+class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
     username_validator = ASCIIUsernameValidator()
 
     username = models.CharField(
@@ -82,6 +83,14 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         """Return the short name for the user."""
         return self.first_name
 
-    def email_user(self, subject, message, from_email=None, **kwargs):
-        """Send email to this user."""
-        send_mail(subject, message, from_email, [self.email], **kwargs)
+    # def email_user(self, subject, message, from_email=None, **kwargs):
+    #     """Send email to this user."""
+    #     send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def customer_emails(self):
+        """Recipient is the customer."""
+        return [self.email]
+
+    def management_mailing_list(self):
+        """Recipient list includes management."""
+        return ['k2foxspb@mail.ru']

@@ -4,6 +4,7 @@ from time import time
 from django.db import models
 
 from django.urls import reverse
+from email_signals.models import EmailSignalMixin
 
 from exp.services.utils import unique_slugify
 
@@ -16,7 +17,7 @@ def news_image_path(instance, filename):
     return f'news_{instance.title}/image/pic_{num}{suff}'
 
 
-class News(models.Model):
+class News(EmailSignalMixin, models.Model):
     title = models.CharField(max_length=256, unique=True, verbose_name="Заголовок")
     preamble = models.CharField(max_length=1024, verbose_name="Преамбула")
     body = models.TextField(blank=True, null=True, verbose_name="Текст")
@@ -48,7 +49,13 @@ class News(models.Model):
             self.slug = unique_slugify(self, self.title)
         super().save(*args, **kwargs)
 
+    def management_mailing_list(self):
+        """Recipient list includes management."""
+        return ['k2foxspb@mail.ru']
+
     class Meta:
         verbose_name = "Новость"
         verbose_name_plural = "Новости"
         ordering = ("-created",)
+
+

@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'robots',
     'data.apps.DataConfig',
     'colorfield',
-    'django_redis'
+    'django_redis',
+    'ckeditor',
+    'email_signals',
 
 ]
 
@@ -176,6 +178,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = name_mail
 EMAIL_HOST_PASSWORD = pass_mail
+EMAIL_SIGNAL_DEFAULT_SENDER = 'k2foxspb@mail.ru'
 
 SITE_ID = 1
 
