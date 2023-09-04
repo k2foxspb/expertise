@@ -21,6 +21,8 @@
                 {{ user.first_name|capfirst }} {{ user.last_name|capfirst }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="nav-link admin" href="{% url 'authapp:profile_edit' pk=user.pk %}">Редактировать профиль</a>
+                    </li>
                 {% if user.is_staff %}
                     <li><a class="nav-link admin" href="{% url 'admin:index' %}">Панель
                         администратора</a>

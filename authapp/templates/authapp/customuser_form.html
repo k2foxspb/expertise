@@ -1,5 +1,7 @@
 {% extends 'exp/base.html' %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+{% load static %}
+
 
 {% block content %}
     <div class="row justify-content-center my-2">
@@ -9,15 +11,15 @@
                 <h3>Регистрация нового пользователя</h3>
             {% else %}
                 <h3>Редактировать профиль</h3>
-{#                <div class="row justify-content-center">#}
-{#                    <div class="col-sm-7 col-md-5 col-lg-4">#}
-{#                        {% if user.avatar %}#}
-{#                            <img src="{{ user.avatar.url }}" alt="" width="50%">#}
-{#                        {% else %}#}
-{#                            <img src="{{ MEDIA_URL }}avatar_default.svg" alt="" width="100%">#}
-{#                        {% endif %}#}
-{#                    </div>#}
-{#                </div>#}
+                <div class="row justify-content-center">
+                    <div class="col-sm-7 col-md-5 col-lg-4">
+                        {% if user.avatar %}
+                            <img class="img-thumbnail " src="{{ user.avatar.url }}" alt="" style="width: 100px; border-radius:100px">
+                        {% else %}
+                            <img class="img-thumbnail" src="{% static 'img/logo.webp' %}" alt="" style="width: 100px; border-radius:100px">
+                        {% endif %}
+                    </div>
+                </div>
             {% endif %}
 
             <form method="post" class="mt-2 cole" enctype="multipart/form-data">

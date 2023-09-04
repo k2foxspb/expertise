@@ -34,7 +34,7 @@ class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
     first_name = models.CharField(_("first name"), max_length=150, blank=True)
     last_name = models.CharField(_("last name"), max_length=150, blank=True)
     age = models.PositiveIntegerField(blank=True, null=True)
-    # avatar = models.ImageField(upload_to=users_avatars_path, blank=True, null=True)
+    avatar = models.ImageField(upload_to=users_avatars_path, blank=True, null=True)
     email = models.CharField(
         _("email address"),
         max_length=256,
@@ -83,9 +83,9 @@ class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
         """Return the short name for the user."""
         return self.first_name
 
-    # def email_user(self, subject, message, from_email=None, **kwargs):
-    #     """Send email to this user."""
-    #     send_mail(subject, message, from_email, [self.email], **kwargs)
+    def email_user(self, subject, message, from_email=None, **kwargs):
+        """Send email to this user."""
+        send_mail(subject, message, from_email, [self.email], **kwargs)
 
     def customer_emails(self):
         """Recipient is the customer."""

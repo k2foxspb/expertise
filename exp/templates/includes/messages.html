@@ -10,14 +10,7 @@
       border-warning
       {% endif %}
         " role="alert" aria-live="assertive" aria-atomic="true"
-                     style="right: 0;">
-                    <div class="toast-header">
-                        <span class="mr-2"><i class="far fa-envelope"></i></span>
-                        <strong
-                                class="mr-auto {% if message.level == 30 %}text-warning{% endif %}">
-                            {{ message.tags|capfirst }} message</strong>
-                        <small class="text-muted">| just now</small>
-                    </div>
+                     style="">
                     <div class="toast-body">
                         {{ message }}
                     </div>

@@ -12,7 +12,7 @@ from authapp import forms
 class CustomLoginView(LoginView):
     def form_valid(self, form):
         ret = super().form_valid(form)
-        message = _("Login success!<br>Hi, %(username)s") % {
+        message = "Успешный вход!<br>Привет, %(username)s" % {
             "username": self.request.user.get_full_name()
             if self.request.user.get_full_name()
             else self.request.user.get_username()
@@ -26,7 +26,7 @@ class CustomLoginView(LoginView):
             messages.add_message(
                 self.request,
                 messages.WARNING,
-                mark_safe(f"Something goes wrong:<br>{msg}"),
+                mark_safe(f"Что-то пошло не так(:<br>{msg}"),
             )
         return self.render_to_response(self.get_context_data(form=form))
 
@@ -43,7 +43,7 @@ class RegisterView(CreateView):
     success_url = reverse_lazy("services:services")
 
     def form_valid(self, form):
-        form.send_email()
+        # form.send_email()
         return super().form_valid(form)
 
 
@@ -53,7 +53,7 @@ class ProfileEditView(UserPassesTestMixin, UpdateView):
     success_url = "/success/"
 
     def form_valid(self, form):
-        form.send_email()
+        # form.send_email()
         return super().form_valid(form)
 
     def test_func(self):
