@@ -14,9 +14,9 @@
                 <div class="row justify-content-center">
                     <div class="col-sm-7 col-md-5 col-lg-4">
                         {% if user.avatar %}
-                            <img class="img-thumbnail " src="{{ user.avatar.url }}" alt="" style="width: 100px; border-radius:100px">
+                            <img class="img-thumbnail img-fluid " src="{{ user.avatar.url }}" alt="" style="width: 200px; height: 200px; border-radius:100px">
                         {% else %}
-                            <img class="img-thumbnail" src="{% static 'img/logo.webp' %}" alt="" style="width: 100px; border-radius:100px">
+                            <img class="img-thumbnail img-fluid" src="{% static 'img/logo.webp' %}" alt="" style="width: 200px; height: 200px; border-radius:100px">
                         {% endif %}
                     </div>
                 </div>
