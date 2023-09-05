@@ -75,6 +75,10 @@
     height: 300px;
     object-fit: cover;
 }
+.img-fluid2 {
+    max-width: 100%;
+    object-fit: cover;
+}
 
 .logo {
     --bs-gutter-x: 1.5rem;
