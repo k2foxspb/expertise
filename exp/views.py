@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
+from django.shortcuts import render
 
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, TemplateView, UpdateView, View
@@ -47,3 +48,7 @@ class NewsDeleteView(PermissionRequiredMixin, DeleteView):
     model = exp_models.News
     success_url = reverse_lazy("exp:news")
     permission_required = ("exp.delete_news",)
+
+
+def tooLarge(request, exception):
+    return render(request, 'includes/414.html')
