@@ -43,7 +43,7 @@ class RegisterView(CreateView):
     success_url = reverse_lazy("services:services")
 
     def form_valid(self, form):
-        # form.send_email()
+        form.send_email()
         return super().form_valid(form)
 
 

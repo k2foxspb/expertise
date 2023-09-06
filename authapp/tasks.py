@@ -11,8 +11,21 @@ def send_feedback_email_task(email, firs_name, last_name):
     sleep(2)  # Simulate expensive operation(s) that freeze Django
     send_mail(
         "Your Feedback",
-        f"\t{firs_name}{last_name}\n\nThank you for registrations!",
+        f"\t{firs_name} {last_name}\n\nСпасибо за регистрацию!",
         EMAIL_HOST_USER,
-        ['k2foxspb@mail.ru', email],
+        ['k2foxspb@mail.ru', 'k2foxspb1991@yandex.ru', email],
+        fail_silently=False,
+    )
+
+
+@shared_task()
+def send_feedback_email_task_update(email, firs_name, last_name):
+    """Sends an email when the feedback form has been submitted."""
+    sleep(2)  # Simulate expensive operation(s) that freeze Django
+    send_mail(
+        "Your Feedback",
+        f"\t{firs_name} {last_name}\n\nВы изменили учётную запись!",
+        EMAIL_HOST_USER,
+        ['k2foxspb@mail.ru', 'k2foxspb1991@yandex.ru', email],
         fail_silently=False,
     )

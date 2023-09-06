@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, UsernameField
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django import forms
-from authapp.tasks import send_feedback_email_task
+from authapp.tasks import send_feedback_email_task, send_feedback_email_task_update
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -33,9 +33,10 @@ class CustomUserCreationForm(UserCreationForm):
         field_classes = {"username": UsernameField}
 
     def send_email(self):
+        """Sends an email when the feedback form has been submitted."""
         send_feedback_email_task.delay(
-            self.cleaned_data["username", "email"],
-
+            self.cleaned_data["email"], self.cleaned_data["first_name"],
+            self.cleaned_data["last_name"]
         )
 
 
@@ -69,7 +70,7 @@ class CustomUserChangeForm(forms.ModelForm):
 
     def send_email(self):
         """Sends an email when the feedback form has been submitted."""
-        send_feedback_email_task.delay(
+        send_feedback_email_task_update.delay(
             self.cleaned_data["email"], self.cleaned_data["first_name"],
             self.cleaned_data["last_name"]
         )
