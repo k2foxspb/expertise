@@ -32,7 +32,7 @@ class CustomUserCreationForm(UserCreationForm):
         )
         field_classes = {"username": UsernameField}
 
-    def send_mass_email(self):
+    def send_email(self):
         """Sends an email when the feedback form has been submitted."""
         send_feedback_email_task.delay(
             self.cleaned_data["email"], self.cleaned_data["first_name"],
@@ -68,7 +68,7 @@ class CustomUserChangeForm(forms.ModelForm):
                 raise ValidationError(_("Please, enter a valid age!"))
         return data
 
-    def send_mass_email(self):
+    def send_email(self):
         """Sends an email when the feedback form has been submitted."""
         send_feedback_email_task_update.delay(
             self.cleaned_data["email"], self.cleaned_data["first_name"],
