@@ -4,13 +4,13 @@ from celery import shared_task
 
 
 @shared_task()
-def send_feedback_email_task(email, username):
+def send_feedback_email_task(email, firs_name, last_name):
     """Sends an email when the feedback form has been submitted."""
-    sleep(20)  # Simulate expensive operation(s) that freeze Django
+    sleep(2)  # Simulate expensive operation(s) that freeze Django
     send_mail(
         "Your Feedback",
-        f"\t{username}\n\nThank you!",
+        f"\t{firs_name}{last_name}\n\nThank you for registrations!",
         "k2foxspb@mail.ru",
-        [email],
+        ['k2foxspb@gmail.com', email],
         fail_silently=False,
     )
