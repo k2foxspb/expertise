@@ -178,14 +178,14 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = name_mail
 EMAIL_HOST_PASSWORD = pass_mail
-EMAIL_SIGNAL_DEFAULT_SENDER = 'k2foxspb@mail.ru'
+EMAIL_SIGNAL_DEFAULT_SENDER = 'sudexpert2023@mail.ru'
 
 SITE_ID = 1
 
 INTERNAL_IPS = ['127.0.0.1']
 
-ADMINS = [('Валерий', 'k2foxspb@gmail.com')]
-SERVER_EMAIL = 'k2foxspb@mail.ru'
+ADMINS = [('Валерий', 'k2foxspb@mail.ru')]
+SERVER_EMAIL = 'sudexpert2023@mail.ru'
 MANAGERS = ADMINS
 
 ROBOTS_SITEMAP_URLS = [

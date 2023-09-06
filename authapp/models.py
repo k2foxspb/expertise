@@ -93,4 +93,4 @@ class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
 
     def management_mailing_list(self):
         """Recipient list includes management."""
-        return ['k2foxspb@mail.ru']
+        return ['sudexpert2023@mail.ru']

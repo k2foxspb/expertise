@@ -51,7 +51,7 @@ class News(EmailSignalMixin, models.Model):
 
     def management_mailing_list(self):
         """Recipient list includes management."""
-        return ['k2foxspb@mail.ru']
+        return ['sudexper2023@mail.ru']
 
     class Meta:
         verbose_name = "Новость"
