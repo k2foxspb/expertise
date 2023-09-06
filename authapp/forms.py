@@ -68,6 +68,12 @@ class CustomUserChangeForm(forms.ModelForm):
         return data
 
     def send_email(self):
+        """Sends an email when the feedback form has been submitted."""
         send_feedback_email_task.delay(
-            self.cleaned_data["email", "username"],
+            self.cleaned_data["email"], self.cleaned_data["username"]
         )
+
+        # send_feedback_email_task.apply_async(args=[
+        #     self.cleaned_data["email"], self.cleaned_data["message"]
+        # ]
+        # ) используется для точной настройки

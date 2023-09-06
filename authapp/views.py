@@ -53,7 +53,7 @@ class ProfileEditView(UserPassesTestMixin, UpdateView):
     success_url = "/success/"
 
     def form_valid(self, form):
-        # form.send_email()
+        form.send_email()
         return super().form_valid(form)
 
     def test_func(self):
