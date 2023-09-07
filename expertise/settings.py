@@ -178,7 +178,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = name_mail
 EMAIL_HOST_PASSWORD = pass_mail
-EMAIL_SIGNAL_DEFAULT_SENDER = 'sudexpert2023@mail.ru'
+EMAIL_SIGNAL_DEFAULT_SENDER = EMAIL_HOST_USER
 
 SITE_ID = 1
 
@@ -201,3 +201,4 @@ CACHES = {
         }
     }
 }
+DEFAULT_FROM_EMAIL = 'sudexpert2023@mail.ru'
