@@ -3,7 +3,7 @@ from django.urls import path, include
 
 from authapp import views
 from authapp.apps import AuthappConfig
-from authapp.views import ResetPasswordView
+from authapp.views import ResetPasswordView, ResetPasswordConfirmView
 
 app_name = AuthappConfig.name
 
@@ -13,10 +13,10 @@ urlpatterns = [
     path("register/", views.RegisterView.as_view(), name="register"),
     path('password-reset/', ResetPasswordView.as_view(), name='password_reset'),
     path('password-reset-confirm/<uidb64>/<token>/',
-         PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'),
+         ResetPasswordConfirmView.as_view(template_name='registration/password_reset_confirm.html'),
          name='password_reset_confirm'),
     path('password-reset-complete/',
-         PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
+         PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
     path(
         "profile_edit/<int:pk>/",

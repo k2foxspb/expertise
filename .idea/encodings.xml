@@ -7,7 +7,6 @@
     <file url="file://$PROJECT_DIR$/authapp/templates/includes" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/authapp/templates/registration" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/authapp/templates/registration/password_reset.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/authapp/templates/registration/password_reset_complete.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authapp/templates/registration/password_reset_confirm.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authapp/templates/registration/password_reset_done.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/data/templates/data_confirm_delete.html" charset="windows-1251" />
@@ -22,9 +21,12 @@
     <file url="file://$PROJECT_DIR$/static/css/я.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/static/js" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/templates/registration" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/templates/registration/password_reset.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/registration/password_reset_complete.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/registration/password_reset_confirm.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/registration/password_reset_done.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/registration/password_reset_email.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/registration/password_reset_form.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/templates/registration/password_reset_subject.txt" charset="UTF-8" />
   </component>
 </project>

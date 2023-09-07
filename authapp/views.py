@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetConfirmView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.safestring import mark_safe
@@ -67,10 +67,14 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
     template_name = 'registration/password_reset.html'
     email_template_name = 'registration/password_reset_email.html'
     subject_template_name = 'registration/password_reset_subject.txt'
-    success_message = "We've emailed you instructions for setting your password, " \
-                      "if an account exists with the email you entered. You should receive them shortly." \
-                      " If you don't receive an email, " \
-                      "please make sure you've entered the address you registered with, and check your spam folder."
+    success_message = "Мы отправили вам по электронной почте инструкции по установке пароля," \
+                      "если существует учетная запись с указанным вами адресом электронной почты." \
+                      "Вы должны получить их в ближайшее время." \
+                      " Если вы не получили электронное письмо," \
+                      "Пожалуйста, убедитесь, что вы ввели адрес, под которым зарегистрировались," \
+                      "и проверьте папку со спамом"
     success_url = reverse_lazy('authapp:login')
 
 
+class ResetPasswordConfirmView(SuccessMessageMixin, PasswordResetConfirmView):
+    success_url = reverse_lazy('authapp:password_reset_complete')
