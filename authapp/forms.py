@@ -1,7 +1,7 @@
 import os
 
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm, UsernameField
+from django.contrib.auth.forms import UserCreationForm, UsernameField, UserChangeForm, PasswordResetForm
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django import forms
@@ -9,22 +9,22 @@ from authapp.tasks import send_feedback_email_task, send_feedback_email_task_upd
 
 
 class CustomUserCreationForm(UserCreationForm):
-    field_order = [
-        "username",
-        "password1",
-        "password2",
-        "email",
-        "first_name",
-        "last_name",
-        "age",
-        "avatar",
-    ]
+    # field_order = [
+    #     "username",
+    #     "email",
+    #     "first_name",
+    #     "last_name",
+    #     "age",
+    #     "avatar",
+    # ]
 
     class Meta:
         model = get_user_model()
         fields = (
             "username",
             "email",
+            "password1",
+            "password2",
             "first_name",
             "last_name",
             "age",
@@ -40,7 +40,9 @@ class CustomUserCreationForm(UserCreationForm):
         )
 
 
-class CustomUserChangeForm(forms.ModelForm):
+class CustomUserChangeForm(UserChangeForm):
+    help_text = _('Пароли хранятся в зашифрованном виде, поэтому нет возможности посмотреть пароль)')
+
     class Meta:
         model = get_user_model()
         fields = (

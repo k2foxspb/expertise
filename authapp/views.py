@@ -1,7 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
@@ -21,7 +22,6 @@ class CustomLoginView(LoginView):
         return ret
 
     def form_invalid(self, form):
-
         for _unused, msg in form.error_messages.items():
             messages.add_message(
                 self.request,
@@ -61,3 +61,16 @@ class ProfileEditView(UserPassesTestMixin, UpdateView):
 
     def get_success_url(self):
         return reverse_lazy("authapp:profile_edit", args=[self.request.user.pk])
+
+
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'registration/password_reset.html'
+    email_template_name = 'registration/password_reset_email.html'
+    subject_template_name = 'registration/password_reset_subject.txt'
+    success_message = "We've emailed you instructions for setting your password, " \
+                      "if an account exists with the email you entered. You should receive them shortly." \
+                      " If you don't receive an email, " \
+                      "please make sure you've entered the address you registered with, and check your spam folder."
+    success_url = reverse_lazy('authapp:login')
+
+

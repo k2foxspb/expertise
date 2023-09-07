@@ -33,7 +33,7 @@ class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
     )
     first_name = models.CharField(_("first name"), max_length=150, blank=True)
     last_name = models.CharField(_("last name"), max_length=150, blank=True)
-    age = models.PositiveIntegerField(blank=True, null=True)
+    age = models.PositiveIntegerField(_("Возраст"), blank=True, null=True)
     avatar = models.ImageField(upload_to=users_avatars_path, blank=True, null=True)
     email = models.CharField(
         _("email address"),
@@ -57,7 +57,6 @@ class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
         ),
     )
     date_joined = models.DateTimeField(_("date joined"), auto_now_add=True)
-
     objects = UserManager()
 
     EMAIL_FIELD = "email"
