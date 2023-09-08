@@ -26,7 +26,7 @@ class CustomLoginView(LoginView):
             messages.add_message(
                 self.request,
                 messages.WARNING,
-                mark_safe(f"Что-то пошло не так(:<br>{msg}"),
+                mark_safe(f"{msg}"),
             )
         return self.render_to_response(self.get_context_data(form=form))
 
