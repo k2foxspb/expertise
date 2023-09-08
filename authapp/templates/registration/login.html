@@ -8,7 +8,6 @@
 {% endblock navbar %}
 
 {% block content %}
-{% include 'includes/messages.html' %}
 
 <div class="row justify-content-around align-items-center" style="height: 100vh; margin: 0px">
     <div class="text-center">
@@ -45,18 +44,4 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-
-        {% if messages %}
-            // Toasts
-            $(".toast").toast({delay: 5000});
-            $(".toast").toast("show");
-        {% endif %}
-
-    });
-
-</script>
-
 {% endblock content %}
