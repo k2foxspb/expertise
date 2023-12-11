@@ -52,9 +52,15 @@
                                 {% endif %}
                             </div>
                             </div>
-                            <p class="card-text cole3 text-justify">
+                            {% if object.body %}
+                                <p class="card-text cole3 text-justify">
                                 {{ object.body }}
                             </p>
+                            {% else %}
+                            <p class="card-text cole3 text-justify">
+                                {{ object.content }}
+                            </p>
+                            {% endif %}
                         {% endautoescape %}
 
                     {% if perms.exp.change_news %}
