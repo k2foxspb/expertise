@@ -14,7 +14,7 @@
 
 {% block content %}
 
-    <div  class="carousel-3d" data-gap="20" data-bfc>
+    <div class="carousel-3d" data-gap="20" data-bfc>
 
         <nav>
             <button class="nav prev">Назад</button>
@@ -24,18 +24,20 @@
 
             {% for list in object_list %}
                 <div itemscope itemtype="https://schema.org/ItemList">
-                <span itemscope itemprop="itemListElement" itemtype="https://schema.org/Product">
-                    <a itemprop="url" href="{% url 'services:services_detail' slug=list.slug %}">
-                        <img itemprop="image" src="{{ list.image.url }}" alt="{{ list.title }}">
-                    </a>
-                    <meta itemprop="name" content="{{ list.title }}">
-                    <meta itemprop="description" content="{{ list.body }}">
-                    <span itemscope itemprop="offers"  itemtype="https://schema.org/Offer">
+                    <div itemscope itemprop="itemListElement" itemtype="https://schema.org/Product">
+
+                        <a itemprop="url" href="{% url 'services:services_detail' slug=list.slug %}">
+                            <img itemprop="image" src="{{ list.image.url }}" alt="{{ list.title }}">
+                        </a>
+                        <meta itemprop="name" content="{{ list.title }}">
+                        <meta itemprop="description" content="{{ list.body }}">
+                        <span itemscope itemprop="offers" itemtype="https://schema.org/AggregateOffer">
 
                         от<span itemprop="lowPrice">{{ object.price }}</span> &#8381
                         <meta itemprop="priceCurrency" content="RUB">
-                    </span>
-                </span>
+                            </span>
+
+                    </div>
                 </div>
             {% endfor %}
 
