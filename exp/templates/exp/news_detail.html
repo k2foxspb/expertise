@@ -53,15 +53,16 @@
                                 {% endif %}
                             </div>
                             </div>
-                            {% if object.body %}
-                                <p class="card-text cole3 text-justify">
-                                    {{ object.body }}
-                                </p>
-                            {% else %}
-                                <div itemprop="articleBody" class="card-text cole3 text-justify">
+                            <div itemprop="articleBody" class="card-text cole3 text-justify">
+                                {% if object.body %}
+                                    <p class="card-text cole3 text-justify">
+                                        {{ object.body }}
+                                    </p>
+                                {% else %}
                                     {{ object.content }}
-                                </div>
-                            {% endif %}
+
+                                {% endif %}
+                            </div>
                         {% endautoescape %}
                     <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                         <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
