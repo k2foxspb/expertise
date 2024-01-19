@@ -1,5 +1,5 @@
 {% extends 'exp/base.html' %}
-{% load crispy_forms_filters %}
+{% load crispy_forms_filters static %}
 {% block title %}
     Новый пост
 {% endblock %}
@@ -16,3 +16,7 @@
         </div>
     </div>
 {% endblock content %}
+{% block js %}
+    <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% endblock %}

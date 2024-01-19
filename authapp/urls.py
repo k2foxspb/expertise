@@ -1,5 +1,5 @@
-from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
-from django.urls import path, include
+from django.contrib.auth.views import PasswordResetCompleteView
+from django.urls import path
 
 from authapp import views
 from authapp.apps import AuthappConfig

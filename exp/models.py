@@ -1,6 +1,8 @@
 from pathlib import Path
 from time import time
 
+from ckeditor_uploader.fields import RichTextUploadingField
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django.db import models
 
 from django.urls import reverse
@@ -21,6 +23,8 @@ class News(EmailSignalMixin, models.Model):
     title = models.CharField(max_length=256, unique=True, verbose_name="Заголовок")
     preamble = models.CharField(max_length=1024, verbose_name="Преамбула")
     body = models.TextField(blank=True, null=True, verbose_name="Текст")
+    content = RichTextUploadingField(blank=True, verbose_name='Контент')
+    widget = CKEditorUploadingWidget()
     created = models.DateTimeField(auto_now_add=True, verbose_name="Создано", editable=False)
     updated = models.DateTimeField(auto_now=True, verbose_name="Отредактировано", editable=False)
     deleted = models.BooleanField(default=False, verbose_name='Пометить как удалённую')

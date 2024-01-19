@@ -30,6 +30,7 @@ sitemaps = {
 }
 
 urlpatterns = [
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('data/', include('data.urls', namespace='data')),
     path('email-signals/', include('email_signals.urls')),
     path('admin/', admin.site.urls),

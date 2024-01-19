@@ -9,15 +9,6 @@ from authapp.tasks import send_feedback_email_task, send_feedback_email_task_upd
 
 
 class CustomUserCreationForm(UserCreationForm):
-    # field_order = [
-    #     "username",
-    #     "email",
-    #     "first_name",
-    #     "last_name",
-    #     "age",
-    #     "avatar",
-    # ]
-
     class Meta:
         model = get_user_model()
         fields = (
