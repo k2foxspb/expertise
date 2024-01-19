@@ -23,9 +23,9 @@
                         </div>
                         <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
                             <meta itemprop="priceCurrency" content="RUB">
-                    <div class="card-text cole3">
-                        от <span itemprop="lowPrice">{{ object.price }}</span> &#8381
-                    </div>
+                            <div class="card-text cole3">
+                                от <span itemprop="lowPrice">{{ object.price }}</span> &#8381
+                            </div>
                         </div>
                         <a href="{% url 'services:services' %}" class="btn btn-primary">Назад</a>
                         {% if perms.exp.change_news %}
