@@ -1,4 +1,5 @@
 {% extends 'exp/base.html' %}
+{% load static %}
 {% load comments %}
 {% block description %}
     {{ object.preamble }}
@@ -14,13 +15,13 @@
     <div class="row justify-content-center pt-3 ">
 
         <div class="col-md-12 col-lg-8">
-            <div class="card shadow color">
-                <div class="card-body">
+            <div  class="card shadow color">
+                <div itemscope itemtype="https://schema.org/Article" class="card-body">
                     <div style="text-align: center;">
                         {% autoescape off %}
-                            <h3 class="card-title cole3">{{ object.title }}</h3>
-                            <h6 class="card-title cole3">{{ object.created }}</h6>
-                            <h5 class="card-title cole3">{{ object.preamble }}</h5>
+                            <h3 class="card-title cole3" itemprop="headline name">{{ object.title }}</h3>
+                            <h6 class="card-title cole3 " itemprop="datePublished">{{ object.created }}</h6>
+                            <h5 class="card-title cole3" itemprop="description">{{ object.preamble }}</h5>
                             <div class="wave_inner">
                                 {% if object.image %}
                                     <figure class="wave" id="statya">
@@ -52,10 +53,19 @@
                                 {% endif %}
                             </div>
                             </div>
-                            <p class="card-text cole3 text-justify">
+                            <div itemprop="articleBody" class="card-text cole3 text-justify">
                                 {{ object.body }}
-                            </p>
+                            </div>
                         {% endautoescape %}
+                    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                            <img itemprop="url image" src="{% static 'img/logo.webp' %}" alt="logo" title="logo"
+                                 style="display:none;"/>
+                        </div>
+                        <meta itemprop="name" content="https://sudexpert.site/">
+                        <meta itemprop="telephone" content="+7 (931) 706-86-00">
+                        <meta itemprop="address" content="Россия">
+                    </div>
 
                     {% if perms.exp.change_news %}
                         <a href="{% url 'exp:news_update'  slug=object.slug %}">
@@ -93,8 +103,8 @@
                 <form action="{% comment_form_target %}" method="POST">
 
                     <div class="container">
-                        <div class="form-group" >
-                            <div class="form-group" >{{ form.comment }}</div>
+                        <div class="form-group">
+                            <div class="form-group">{{ form.comment }}</div>
                         </div>
                         {% csrf_token %}
                         {{ form.honeypot }}
@@ -102,7 +112,7 @@
                         {{ form.object_pk }}
                         {{ form.timestamp }}
                         {{ form.security_hash }}
-                        <input type="hidden" value="{% url 'exp:news_detail' news.id %}"  class="input-group-text"/>
+                        <input type="hidden" value="{% url 'exp:news_detail' news.id %}" class="input-group-text"/>
                         <input type="submit" class="btn btn-primary" value="Комментировать" id="id_submit"/>
                         <input type="hidden" name="next" value="{% url 'exp:news_detail' news.slug %}"/>
                     </div>

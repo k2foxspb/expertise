@@ -7,12 +7,15 @@
     Как нас найти
 {% endblock description %}
 {% block keywords %}
-    sudexpert2023@mail.ru, ул. Благодатная, д. 69, 196105, Санкт-Петербург, ул. Благодатная, д. 69, корп. 1, лит. Д, офис 3303
+    sudexpert2023@mail.ru, ул. Благодатная, д. 69, 196105, Санкт-Петербург, ул. Благодатная, д. 69, корп. 1, лит. Д,
+    офис 3303
 {% endblock keywords %}
 {% block content %}
     <div class=" container-md col-sm-8 col-md-8 col-lg-9 pb-2">
         <div class="card h-100 shadow">
-            <div class="card-body">
+            <div itemscope itemtype="http://schema.org/Organization" class="card-body">
+                <span itemprop="name">OOO "Судебные и криминалистические экспертизы"</span>
+                <link itemprop="url" href="https://sudexpert.site">
                 <div style="position:relative;overflow:hidden;">
                     <a
                             href="https://yandex.ru/maps/2/saint-petersburg/house/blagodatnaya_ulitsa_69k1d/Z0kYdQNlTEYOQFtjfXR2d3prZA==/?ll=30.345539%2C59.876680&utm_medium=mapframe&utm_source=maps&z=17.09"
@@ -25,24 +28,36 @@
                 </div>
                 <h5 class="card-title">Санкт‑Петербург</h5>
                 <p class="card-text">
+
                 <ul class="list-unstyled">
                     <li>Телефон</li>
-                    <li class=phone><a href="tel:+79317068600">+7 (931) 706-86-00</a></li>
-                    <li class=phone><a href="tel:+78126402130">+7 (812) 640-21-30</a></li>
+                    <li itemprop="telephone" class=phone><a href="tel:+79317068600">+7 (931) 706-86-00</a></li>
+                    <li itemprop="telephone" class=phone><a href="tel:+78126402130">+7 (812) 640-21-30</a></li>
 
                 </ul>
                 <ul class="list-unstyled">
                     <li>Email</li>
-                    <li><strong>sudexpert2023@mail.ru</strong></li>
+                    <li><strong itemprop="email">sudexpert2023@mail.ru</strong></li>
                     <li><strong>info@mepk-a.ru</strong></li>
                 </ul>
-                <ul class="list-unstyled">
-                    <li>Адрес</li>
-                    <li><strong>Адрес: 196105, Санкт-Петербург,
-                        ул. Благодатная, д. 69, корп. 1,
-                        лит. Д, офис 3303</strong>
-                    </li>
-                </ul>
+                \
+
+
+                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <ul class="list-unstyled">
+                        <li>Адрес</li>
+                        <li>
+                            <strong>
+
+                            <span itemprop="addressCountry">Россия</span>,
+                            <span itemprop="postalCode">196105</span>,
+                            <span itemprop="addressLocality">Санкт-Петербург</span>,
+                            <span itemprop="streetAddress">ул. Благодатная, д. 69, корп. 1,
+                                лит. Д, офис 3303</span>
+                        </strong>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

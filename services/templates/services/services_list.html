@@ -1,34 +1,41 @@
 {% extends 'exp/base.html' %}
 
 {% block description %}
-ООО "СКЭ" выполняет комплекс услуг по экспертизе экологического
-состояния водных, почвенных и воздушных природных и промышленных
-объектов. Федеральный центр судебной экспертизы помогает Арбитражным Судам установить
-истинную сумму ущерба, значительно снизить размер претензий РПН
+    ООО "СКЭ" выполняет комплекс услуг по экспертизе экологического
+    состояния водных, почвенных и воздушных природных и промышленных
+    объектов. Федеральный центр судебной экспертизы помогает Арбитражным Судам установить
+    истинную сумму ущерба, значительно снизить размер претензий РПН
 {% endblock description %}
 
 {% block keywords %}
-судебно криминалистическая экспертиза, центр судебно криминалистической экспертизы, судебно криминалистическая экспертиза вопросы, экспертно криминалистический центр судебная экспертиза
+    судебно криминалистическая экспертиза, центр судебно криминалистической экспертизы, судебно криминалистическая
+    экспертиза вопросы, экспертно криминалистический центр судебная экспертиза
 {% endblock keywords %}
 
 {% block content %}
 
-<div class="carousel-3d" data-gap="20" data-bfc>
-    <nav>
-        <button class="nav prev">Назад</button>
-        <button class="nav next">Вперед</button>
-    </nav>
-    <figure>
+    <div itemscope itemtype="http://schema.org/ItemList" class="carousel-3d" data-gap="20" data-bfc>
+        <nav>
+            <button class="nav prev">Назад</button>
+            <button class="nav next">Вперед</button>
+        </nav>
+        <figure>
 
-        {% for list in object_list %}
-        <div>
-            <a href="{% url 'services:services_detail' slug=list.slug %}">
-                <img src="{{ list.image.url }}" alt="{{ list.title }}">
-            </a>
-        </div>
-        {% endfor %}
+            {% for list in object_list %}
+                <div>
+                    <a itemprop="url" href="{% url 'services:services_detail' slug=list.slug %}">
+                        <img itemprop="image" src="{{ list.image.url }}" alt="{{ list.title }}">
+                    </a>
+                    <meta itemprop="name" content="{{ list.title }}">
+                    <meta itemprop="description" content="{{ list.body }}">
+                    <SPAN itemprop="offer" itemtype="http://schema.org/AgrigateOffer">
+                        <meta itemprop="priceCurrency" content="RUB">
+                        <span itemprop="lowPrice">{{ object.price }}</span> &#8381
+                    </SPAN>
+                </div>
+            {% endfor %}
 
-    </figure>
+        </figure>
 
-</div>
+    </div>
 {% endblock %}

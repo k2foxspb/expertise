@@ -9,21 +9,24 @@
 {% endblock keywords %}
 
 {% block content %}
-    <div class="container-md">
+    <div itemscope itemtype="http://schema.org/Product" class="container-md">
         <div class="row g-0">
             <div class="justify-content-center pt-3 ">
                 <div class="card shadow color">
                     <div class="card-body">
-                        <h5 class="card-title cole3">{{ object.title }}</h5>
-                        <p class="card-text cole3 text-justify">
+                        <h5 itemprop="name" class="card-title cole3">{{ object.title }}</h5>
+                        <div itemprop="description" class="card-text cole3 text-justify">
                             {% autoescape off %}
-                            {{ object.body }}
+                                {{ object.body }}
                             {% endautoescape %}
 
-                        </p>
-                    <p class="card-text cole3">
-                        от {{ object.price }} &#8381
-                    </p>
+                        </div>
+                        <div itemprop="offer" itemtype="http://schema.org/AgrigateOffer">
+                            <meta itemprop="priceCurrency" content="RUB">
+                    <div class="card-text cole3">
+                        от <span itemprop="lowPrice">{{ object.price }}</span> &#8381
+                    </div>
+                        </div>
                         <a href="{% url 'services:services' %}" class="btn btn-primary">Назад</a>
                         {% if perms.exp.change_news %}
 
@@ -44,5 +47,5 @@
 
             </div>
         </div>
-
+    </div>
 {% endblock content %}
