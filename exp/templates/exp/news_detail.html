@@ -54,7 +54,7 @@
                         </div>
                         </div>
                         <div itemprop="articleBody" class="card-text cole3 text-justify">
-                            {{ object.body }}
+                            {{ object.content }}
                         </div>
                     {% endautoescape %}
                 <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
@@ -66,7 +66,6 @@
                     <meta itemprop="telephone" content="+7 (931) 706-86-00">
                     <meta itemprop="address" content="Россия">
                 </div>
-                {% endautoescape %}
 
 
                 {% if perms.exp.change_news %}
