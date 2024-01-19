@@ -30,9 +30,10 @@
                     </a>
                     <meta itemprop="name" content="{{ list.title }}">
                     <meta itemprop="description" content="{{ list.body }}">
-                    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <span itemscope itemprop="offers"  itemtype="https://schema.org/Offer">
+
+                        от<span itemprop="lowPrice">{{ object.price }}</span> &#8381
                         <meta itemprop="priceCurrency" content="RUB">
-                        <span itemprop="lowPrice">{{ object.price }}</span> &#8381
                     </span>
                 </span>
                 </div>
