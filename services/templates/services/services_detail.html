@@ -9,7 +9,7 @@
 {% endblock keywords %}
 
 {% block content %}
-    <div itemscope itemtype="http://schema.org/Product" class="container-md">
+    <div itemscope itemtype="https://schema.org/Product" class="container-md">
         <div class="row g-0">
             <div class="justify-content-center pt-3 ">
                 <div class="card shadow color">
@@ -21,7 +21,7 @@
                             {% endautoescape %}
 
                         </div>
-                        <div itemprop="offer" itemtype="http://schema.org/AgrigateOffer">
+                        <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
                             <meta itemprop="priceCurrency" content="RUB">
                     <div class="card-text cole3">
                         от <span itemprop="lowPrice">{{ object.price }}</span> &#8381
