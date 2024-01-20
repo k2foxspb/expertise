@@ -50,5 +50,5 @@ class NewsDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = ("exp.delete_news",)
 
 
-def tooLarge(request, exception):
-    return render(request, 'includes/404.html')
+# def tooLarge(request, exception):
+#     return render(request, 'includes/404.html')
