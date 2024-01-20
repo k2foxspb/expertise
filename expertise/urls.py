@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
 
-from exp.views import tooLarge
+# from exp.views import tooLarge
 from .sitemaps import NewsSitemap, ServicesSitemap, StaticViewSitemap
 
 sitemaps = {
