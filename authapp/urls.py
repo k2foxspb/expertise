@@ -21,6 +21,10 @@ urlpatterns = [
     path(
         "profile_edit/<int:pk>/",
         views.ProfileEditView.as_view(),
-        name="profile_edit",
-    ),
+        name="profile_edit"),
+    path('email-confirmation-sent/', views.EmailConfirmationSendView.as_view(), name="email_confirmation_sent"),
+    path('confirm-email/<str:uidb64>/<str:token>/', views.ConfirmEmailView.as_view(), name='conf_email'),
+    path('confirm-email-failed/', views.EmailConfirmationFailedView.as_view(), name='fail_email'),
+    path('privacy-policy', views.PrivacyPolicyView.as_view(), name="privacy_policy"),
+    path('email-confirmed', views.EmailConfirmedView.as_view(), name="email_confirmed"),
 ]

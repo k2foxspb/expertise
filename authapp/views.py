@@ -1,13 +1,21 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, login
 from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetConfirmView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.sites.models import Site
+from django.core.mail import send_mail
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import CreateView, UpdateView
+
+from django.views.generic import CreateView, UpdateView, View, TemplateView
 from authapp import forms
+from expertise.settings import EMAIL_HOST_USER
 
 
 class CustomLoginView(LoginView):
@@ -37,14 +45,75 @@ class CustomLogoutView(LogoutView):
         return super().dispatch(request, *args, **kwargs)
 
 
+User = get_user_model()
+
+
 class RegisterView(CreateView):
-    model = get_user_model()
+
     form_class = forms.CustomUserCreationForm
-    success_url = reverse_lazy("services:services")
+    template_name = 'authapp/customuser_form.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Регистрация на сайте'
+        return context
 
     def form_valid(self, form):
-        form.send_email()
-        return super().form_valid(form)
+        # form.send_email()
+        user = form.save(commit=False)
+        user.is_active = False
+        user.save()
+        token = default_token_generator.make_token(user)
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        activation_url = reverse_lazy('authapp:conf_email', kwargs={'uidb64': uid, 'token': token})
+        current_site = Site.objects.get_current().domain
+        send_mail(
+            'Подтвердите свой электронный адрес',
+            f'Пожалуйста перейдите по ссылке https://{current_site}{activation_url}',
+            'sudexpert2023@mail.ru',
+            [user.email],
+            fail_silently=False,
+
+        )
+        return redirect('authapp:email_confirmation_sent')
+
+
+class ConfirmEmailView(View):
+    def get(self, request, uidb64, token, *args, **kwargs):
+        try:
+            uid = urlsafe_base64_decode(uidb64)
+            user = User.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+            user = None
+        if user is not None and default_token_generator.check_token(user, token):
+            user.is_active = True
+            user.save()
+            login(request, user)
+            return redirect('authapp:email_confirmed')
+        else:
+            return redirect('authapp:fail_email')
+
+
+class EmailConfirmationSendView(TemplateView):
+    template_name = 'registration/email_confirmation_sent.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Письмо отправлено'
+        return context
+
+
+class EmailConfirmedView(TemplateView):
+    template_name = 'registration/email_confirmed.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Ваш электронный адрес активирован'
+        return context
+
+
+class EmailConfirmationFailedView(TemplateView):
+    template_name = 'registration/email_confirmation_failed.html'
 
 
 class ProfileEditView(UserPassesTestMixin, UpdateView):
@@ -53,7 +122,7 @@ class ProfileEditView(UserPassesTestMixin, UpdateView):
     success_url = "/success/"
 
     def form_valid(self, form):
-        form.send_email()
+        # form.send_email()
         return super().form_valid(form)
 
     def test_func(self):
@@ -78,3 +147,7 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
 
 class ResetPasswordConfirmView(SuccessMessageMixin, PasswordResetConfirmView):
     success_url = reverse_lazy('authapp:password_reset_complete')
+
+
+class PrivacyPolicyView(TemplateView):
+    template_name = 'registration/Privacy_Policy.html'

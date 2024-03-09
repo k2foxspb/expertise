@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<div class="row justify-content-around align-items-center" style="height: 100vh; margin: 0px">
+<div class="row justify-content-around align-items-center" style="height: 100vh; margin: 0">
     <div class="text-center">
         <p>
             <a href="{% url 'services:services' %}"><img src="{% static 'img/logo.webp' %}" style="width: 200px" alt=""></a>
@@ -38,7 +38,8 @@
         <div class="row justify-content-between">
             <div class="col">
                 <a href="{% url 'authapp:register' %}"><small>Регистрация</small></a><br>
-                <a href="{% url 'authapp:password_reset' %}"><small>Восстановление пароля</small></a>
+                <a href="{% url 'authapp:password_reset' %}"><small>Восстановление пароля</small></a><br>
+                <a href="{% url 'authapp:privacy_policy' %}"><small>Политика конфиденциальности</small></a>
             </div>
 
         </div>

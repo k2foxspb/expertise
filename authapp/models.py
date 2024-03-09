@@ -11,11 +11,17 @@ from email_signals.models import EmailSignalMixin
 
 
 def users_avatars_path(instance, filename):
-    # file will be uploaded to
-    #   MEDIA_ROOT / user_<username> / avatars / <filename>
     num = int(time() * 1000)
     suff = Path(filename).suffix
     return f'user_{instance.username}/avatars/pic_{num}{suff}'
+
+
+# def age_valid(age):
+#     if 18 > age > 100:
+#         return False
+#
+#     else:
+#         return True
 
 
 class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
@@ -33,7 +39,7 @@ class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
     )
     first_name = models.CharField(_("first name"), max_length=150, blank=True)
     last_name = models.CharField(_("last name"), max_length=150, blank=True)
-    age = models.PositiveIntegerField(_("Возраст"), blank=True, null=True)
+    age = models.PositiveIntegerField(_("Возраст"), blank=True, null=True,)
     avatar = models.ImageField(upload_to=users_avatars_path, blank=True, null=True)
     email = models.CharField(
         _("email address"),
@@ -58,7 +64,6 @@ class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
     )
     date_joined = models.DateTimeField(_("date joined"), auto_now_add=True)
     objects = UserManager()
-
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = ["email"]
@@ -66,6 +71,10 @@ class CustomUser(EmailSignalMixin, PermissionsMixin, AbstractBaseUser):
     class Meta:
         verbose_name = _("user")
         verbose_name_plural = _("users")
+
+    # def save(self, *args, **kwargs):
+    #     if age_valid:
+    #         super().save()
 
     def clean(self):
         super().clean()

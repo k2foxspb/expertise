@@ -6,6 +6,8 @@
     <file url="file://$PROJECT_DIR$/authapp/templates/authapp/password_reset_confirm.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authapp/templates/includes" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/authapp/templates/registration" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/authapp/templates/registration/email_confirmation_failed.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/authapp/templates/registration/email_confirmation_sent.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authapp/templates/registration/password_reset.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authapp/templates/registration/password_reset_confirm.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authapp/templates/registration/password_reset_done.html" charset="UTF-8" />

@@ -30,6 +30,13 @@ class CustomUserCreationForm(UserCreationForm):
             self.cleaned_data["last_name"]
         )
 
+    def clean_age(self):
+        data = self.cleaned_data.get("age")
+        if data:
+            if data < 18 or data > 90:
+                raise ValidationError(_("Please, enter a valid age!"))
+        return data
+
 
 class CustomUserChangeForm(UserChangeForm):
     help_text = _('Пароли хранятся в зашифрованном виде, поэтому нет возможности посмотреть пароль)')
