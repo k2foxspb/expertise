@@ -174,7 +174,7 @@ CELERY_RESULT_BACKEND = "redis://localhost:6379"
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_PORT = 2525
+EMAIL_PORT = 465
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = name_mail
@@ -185,9 +185,9 @@ SITE_ID = 1
 
 INTERNAL_IPS = ['127.0.0.1']
 
-# ADMINS = [('Валерий', 'k2foxspb@mail.ru')]
+ADMINS = [('Валерий', 'k2foxspb@mail.ru')]
 SERVER_EMAIL = 'sudexpert2023@mail.ru'
-# MANAGERS = ADMINS
+MANAGERS = ADMINS
 
 ROBOTS_SITEMAP_URLS = [
     'https://sudexpert.site/sitemap.xml',
