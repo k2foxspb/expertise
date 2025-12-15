@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
-from product import key, db, user_name, passwd, host, name_mail, pass_mail
+from product import key, user_name, passwd, host, name_mail, pass_mail
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
